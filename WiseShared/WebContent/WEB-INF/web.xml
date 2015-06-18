@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WiseShared</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+		<display-name>renderImages</display-name>
+		<servlet-name>renderImages</servlet-name>
+		<servlet-class>edu.ucla.wise.shared.images.ImageRenderer</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>renderImages</servlet-name>
+		<url-pattern>/image</url-pattern>
+	</servlet-mapping>
+	
+	  <servlet>
+		<display-name>uploadImages</display-name>
+		<servlet-name>uploadImages</servlet-name>
+		<servlet-class>edu.ucla.wise.shared.images.web.ImageUploaderServlet</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uploadImages</servlet-name>
+		<url-pattern>/image_upload</url-pattern>
+	</servlet-mapping>
+	
+	  <servlet>
+		<display-name>renderStyle</display-name>
+		<servlet-name>renderStyle</servlet-name>
+		<servlet-class>edu.ucla.wise.shared.images.StyleRenderer</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>renderStyle</servlet-name>
+		<url-pattern>/style</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

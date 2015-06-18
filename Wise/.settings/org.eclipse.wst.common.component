@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="WISE">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <dependent-module archiveName="log4j-1.2.15.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/log4j-1.2.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cos.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/cos.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mysql-connector-java-3.1.12-bin.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/mysql-connector-java-3.1.12-bin.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/mail.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gson-2.2.4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/gson-2.2.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="common-lang3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/common-lang3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="guava-13.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/guava-13.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-fileupload-1.2.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/commons-fileupload-1.2.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="freemarker.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/freemarker.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/classes" handle="module:/org.jboss.ide.eclipse.archives.webtools.filesets.vcf.FilesetComponentResolver/path=%2FWISE%2Fconf&amp;includes=**&amp;excludes=">
+            <dependency-type>consumes</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="WiseShared.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/dist/WiseShared.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasypt-1.9.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/WiseShared/lib/jasypt-1.9.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="WISE"/>
+        <property name="java-output-path" value="/WISE/build/classes"/>
+    </wb-module>
+</project-modules>

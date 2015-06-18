@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/lofts/WISE/!svn/ver/1/WebContent/WEB-INF/xml/workload
+END
+file2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/lofts/WISE/!svn/ver/1/WebContent/WEB-INF/xml/workload/file2.xml
+END
+file3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/lofts/WISE/!svn/ver/1/WebContent/WEB-INF/xml/workload/file3.xml
+END
+messages.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/lofts/WISE/!svn/ver/1/WebContent/WEB-INF/xml/workload/messages.xml
+END

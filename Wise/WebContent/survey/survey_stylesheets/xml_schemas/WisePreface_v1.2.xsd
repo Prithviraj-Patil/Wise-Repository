@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Preface">
+		<xs:annotation>
+			<xs:documentation>Defines content of standard opening and closing pages, optional consent forms, and email messages for all surveys within a project </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Welcome_Page" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Each survey should have at least one welcome page, which can be shared by users with any IRB. If an IRB requires specific welcome-page wording, a separate version of the welcome page should be created, with the IRB_ID specified. An incoming user would be directed first to any IRB-specific welcome page, or otherwise to the generic welcome page for the survey, with their IRB logo substituted (if any).</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="html_content" minOccurs="0"/>
+							<xs:element name="p" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="ID" type="xs:ID" use="required"/>
+						<xs:attribute name="Survey_ID" type="xs:string" use="required"/>
+						<xs:attribute name="IRB_ID" type="xs:IDREF" use="optional"/>
+						<xs:attribute name="Title" type="xs:string" use="optional"/>
+						<xs:attribute name="BannerFileName" type="xs:string" use="optional"/>
+						<xs:attribute name="LogoFileName" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="IRB" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Each IRB involved in the study should be specified. The IRB's ID should be referenced by the IRB_ID field for each invitee.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="ID" type="xs:ID" use="required"/>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="Logo_File" type="xs:string" use="optional"/>
+						<xs:attribute name="IRB_Approval_Number" type="xs:string" use="optional"/>
+						<xs:attribute name="Expiration_Date" type="xs:date" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Consent_Form" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Each survey may have one or more consent forms, each of which must be associated with a specific survey and IRB. An incoming user is directed to a consent form only if one exists for their survey and IRB. Othersie it's assumed that no consent is required for this particular subject taking the specified survey.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="p" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="s" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="bullets" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="bullet_item" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="item_subject"/>
+													<xs:element name="item_content" minOccurs="0" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="html_header" minOccurs="0"/>
+						</xs:choice>
+						<xs:attribute name="ID" type="xs:ID" use="required"/>
+						<xs:attribute name="IRB_ID" type="xs:IDREF" use="required"/>
+						<xs:attribute name="Survey_ID" type="xs:string" use="required"/>
+						<xs:attribute name="Title" type="xs:string" use="optional"/>
+						<xs:attribute name="Sub_Title" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Message_Sequence" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Message Sequence defines different types of email messages used by WISE sytem. They will be sent to user according to different user state. Meanwhile, user's state will be updated after the email was sent.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Initial_Invitation" type="Type_Message"/>
+							<xs:element name="Start_Reminder" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="Type_Message">
+											<xs:attribute name="Trigger_Days" type="xs:int" use="required"/>
+											<xs:attribute name="Max_Count" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Interrupt" type="Type_Message" minOccurs="0"/>
+							<xs:element name="Completion_Reminder" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="Type_Message">
+											<xs:attribute name="Trigger_Days" type="xs:int" use="required"/>
+											<xs:attribute name="Max_Count" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Done" type="Type_Message" minOccurs="0"/>
+							<xs:element name="Review" type="Type_Message" minOccurs="0"/>
+							<xs:element name="Message" type="Type_Message" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="ID" type="xs:ID" use="required"/>
+						<xs:attribute name="IRB_ID" type="xs:IDREF" use="optional"/>
+						<xs:attribute name="Survey_ID" type="xs:string" use="required"/>
+						<xs:attribute name="From_String" type="xs:string" use="optional"/>
+						<xs:attribute name="From_Email" type="xs:string" use="optional"/>
+						<xs:attribute name="Reply_String" type="xs:string" use="optional"/>
+						<xs:attribute name="Reply_Email" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ThankYou_Page" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>One "Thank You" page can be shared by all surveys and users. If specific wording is needed for a survey or an IRB, a separate version can be created for each, with the relevant attributes specified. All projects need a ThankYou page unless all surveys only forward on to other apps.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="html_content" minOccurs="0"/>
+							<xs:element name="p" minOccurs="0"/>
+						</xs:choice>
+						<xs:attribute name="ID" type="xs:ID" use="optional"/>
+						<xs:attribute name="Survey_ID" type="xs:string" use="optional"/>
+						<xs:attribute name="IRB_ID" type="xs:IDREF" use="optional"/>
+						<xs:attribute name="Title" type="xs:string" use="optional"/>
+						<xs:attribute name="BannerFileName" type="xs:string" use="optional"/>
+						<xs:attribute name="LogoFileName" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="Project_Name" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Type_Message">
+		<xs:annotation>
+			<xs:documentation>Generic representation for all types of email messages</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="p" maxOccurs="unbounded"/>
+				<xs:element name="link" minOccurs="0"/>
+				<xs:element name="declineLink" minOccurs="0"/>
+				<xs:element name="s" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>This is the signature block. The Schema won't enforce order but end with this.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="Message_Ref" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="ID" type="xs:IDREF" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="ID" type="xs:ID" use="required"/>
+		<xs:attribute name="Subject" type="xs:string" use="required"/>
+		<xs:attribute name="Format" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:element name="p">
+		<xs:annotation>
+			<xs:documentation>The basic paragraph element of an email message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="link" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="begin"/>
+						<xs:enumeration value="decline"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

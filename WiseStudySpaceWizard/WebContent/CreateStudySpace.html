@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Create Study Space</title>
+	<!-- Add twitter bootstrap libraries -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="javascripts/CreateStudySpaceFormValidator.js"></script>
+</head>
+<body>
+	<!-- Make input boxes for entering all parameters -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div>
+					<h3>WISE Study Space Creation Wizard</h3>
+				</div>
+			<form name="createStudySpaceForm" role="form" class="form-horizontal" action="submitStudySpaceParams"
+				method="get" onsubmit="return validateForm()">
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-sm-4" for="studySpaceName">Study Space
+						Name:</label>
+					<div class="col-sm-8">
+						<input type="text" name="studySpaceName" placeholder="eg. wisedev">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4 col-sm-4" for="serverURL">Server URL:</label>
+					<div class="col-sm-4">
+						<input type="text" name="serverURL" placeholder="eg. http://localhost:8080">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="serverAppName">Server app
+						name:</label>
+					<div class="col-sm-8">
+						<input type="text" name="serverAppName" value="WISE">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="sharedFiles_linkName">Shared files
+						link name:</label>
+					<div class="col-sm-8">
+						<input type="text" name="sharedFiles_linkName" value="survey">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dirName">Directory name:</label>
+					<div class="col-sm-8">
+						<input type="text" name="dirName" placeholder="eg. same as study space name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dbuser">DB username:</label>
+					<div class="col-sm-8">
+						<input type="text" name="dbuser" placeholder="eg. same as study space name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dbpass">DB password:</label>
+					<div class="col-sm-8">
+						<input type="text" name="dbpass" placeholder="eg. password">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dbname">DB name:</label>
+					<div class="col-sm-8">
+						<input type="text" name="dbname" placeholder="eg. same as study space name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="projectTitle">Project Title:</label>
+					<div class="col-sm-8">
+						<input type="text" name="projectTitle" placeholder="eg. New home owners study">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dbCryptKey">Database
+						encryption key:</label>
+					<div class="col-sm-8">
+						<input type="text" name="dbCryptKey" placeholder="eg. testtesttesttest">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="dbCryptKey">Email Sending Time:</label>
+					<div class="col-sm-8">
+						<input type="text" name="emailSendTime" placeholder="12">
+						<input type="submit" class="btn" value="Submit">
+					</div>
+				</div>
+		</form>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

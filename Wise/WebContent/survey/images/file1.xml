@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Douglas S. Bell (private) -->
+<?xml-stylesheet type="text/xsl" href="survey_pro2.1.xslt"?>
+<Survey Title="RRT Survey" Project_Name="ctsi_rrt" ID="rrt_survey" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WiseSurvey_repeatQs.xsd" Allow_Goback="true">
+	<Survey_Page Title="Participation" ID="page_1">
+		<Closed_Question Name="prep_for_renewal" requiredField="true">
+			<Stem>How far in advance did you/will you actively start preparing the renewal of your [GRANT APPLICATION NAME] (i.e. beginning to draft the narrative, put together a budget, etc.)?</Stem>
+			<Response_Set ID="months_to_prepare">
+				<Response_Option>Less than 3 months</Response_Option>
+				<Response_Option>3-6 months</Response_Option>
+				<Response_Option>6-9 months</Response_Option>
+				<Response_Option>9-12 months</Response_Option>
+				<Response_Option>More than 12 months</Response_Option>
+				<Response_Option>N/A, not up for renewal</Response_Option>
+				<Response_Option>N/A, will not be applying for renewal</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Question_Block Name="rate_admin_support_for_renewal">
+			<Stem>How would you rate the experience and capability of the current administrative support for your renewal?</Stem>
+			<Response_Set ID="relativeValue" Levels="5">
+				<Response_Option>0 being No Support</Response_Option>
+				<Response_Option>5 being Most Support</Response_Option>
+			</Response_Set>
+			<Sub_Stem></Sub_Stem>
+		</Question_Block>
+		<Question_Block Name="admin_support_avail_time">
+			<Stem>How would you rate the availability and dedicated time of the current administrative support for your grant renewal?</Stem>
+			<Response_Set ID="rate_support" Levels="5">
+				<Response_Option>1 being No Support</Response_Option>
+				<Response_Option>5 being Available on a Dedicated Full Time Basis Specifically for your Project</Response_Option>
+			</Response_Set>
+			<Sub_Stem></Sub_Stem>
+		</Question_Block>
+		<Closed_Question Name="ext_rev_prop">
+			<Stem>Are you conducting or planning to conduct an external review of the proposal (review of all and/or key parts by scientists not involved in the submission) prior to application due date?</Stem>
+			<Response_Set ID="conduct_rev">
+				<Response_Option>Yes, we are currently planning to do so and have a process/mechanism in place</Response_Option>
+				<Response_Option>Would like to but currently do not have a process/mechanism in place</Response_Option>
+				<Response_Option>Would like to but do not have enough time</Response_Option>
+				<Response_Option>Not plausible at this point</Response_Option>
+				<Response_Option>Not necessary for this proposal</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="read_ren">
+		 	<Stem>How many reviewers (both internal and external) do you plan to engage in reading all or parts of your renewal application?</Stem>
+		 	<Text_Open_Response MultiLine="true" MaxSize="1200" Height="5" Width="80"/>
+		</Open_Question>
+		<Closed_Question Name="ren_proc">
+			<Stem>Are you engaging or planning to engage a medica/grant writer in your renewal process?</Stem>
+			<Response_Set ID="ref_resp">
+				<Response_Option>Yes, we are currently planning to do so</Response_Option>
+				<Response_Option>Would like to but can not afford to</Response_Option>
+				<Response_Option>Would like to but do not have enough time</Response_Option>
+				<Response_Option>Not plausible at this point</Response_Option>
+				<Response_Option>Not necessary for this proposal</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="sup_mtg">
+			<Stem>Would you like RRT to help provide support for planning meetings?</Stem>
+			<Response_Set ID="y_yb_n">
+				<Response_Option>yes</Response_Option>
+				<Response_Option>no</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="prep_docs">
+			<Stem>Who is/will be preparing documentation such as the biosketches, letters of support, etc.?</Stem>
+			<Response_Set ID="titles">
+				<Response_Option>Fund Manager</Response_Option>
+				<Response_Option>Other Admin Support</Response_Option>
+				<Response_Option>PI</Response_Option>
+				<Response_Option>Co-Investigators</Response_Option>
+				<Response_Option>Not Sure</Response_Option>
+				<Response_Option>Would like RRT Help</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="prep_bud">
+			<Stem>Who is/will be preparing the budget?</Stem>
+			<Response_Set ID="names">
+				<Response_Option>Dedicated Fund Manager</Response_Option>
+				<Response_Option>Other Admin Support</Response_Option>
+				<Response_Option>PI</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="NIH_disc">
+			<Stem>Do you plan to engage your NIH Program Officer in discussing your renewal plans?</Stem>
+			<Response_Set ID="y_y_n_1">
+				<Response_Option>Yes, would like to/intend to</Response_Option>
+				<Response_Option>Yes, but haven't yet</Response_Option>
+				<Response_Option>No</Response_Option>
+			</Response_Set>	
+		</Closed_Question>
+		<Closed_Question Name="ctsi_ren">
+			<Stem>Are you currently involving or planning to involve CTSI in your renewal</Stem>
+			<Response_Set ID="y_y_n_2">
+				<Response_Option>Yes, already planning to include in the renewal</Response_Option>
+				<Response_Option>Yes, but would like support in optimizing this</Response_Option>
+				<Response_Option>No, CTSI involvement is not necesary</Response_Option>
+			</Response_Set>	
+		</Closed_Question>
+		<Closed_Question Name="ctsi_as">
+			<Stem>Are you interested in learning how the CTSI might be an asset to your renewal?</Stem>
+			<Response_Set ID="y_n">
+				<Response_Option>Yes</Response_Option>
+				<Response_Option>No</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="rrt_soft">
+			<Stem>Would you like to consider learning about using the RRT grant application software for managing the renewal tasks and secure document sharing?</Stem>
+			<Response_Set ID="y_m_n">
+				<Response_Option>Yes</Response_Option>
+				<Response_Option>Maybe</Response_Option>
+				<Response_Option>No</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="soft_fea">
+			<Precondition>
+				<field>rrt_soft</field>
+				<eq>1</eq>
+				<cn>1</cn>
+			</Precondition>
+			<Stem>If yes, would you like to have your staff or yourself introduced to the software feastures?</Stem>
+			<Response_Set_Ref Response_Set="y_n"/>
+		</Closed_Question>
+		<Open_Question Name="bar_ren">
+			<Stem>Please describe any other barriers yu are facing/anticipating facing regarding the renewal of your program project/center grant.</Stem>
+			<Text_Open_Response MultiLine="true" MaxSize="1200" Height="5" Width="80"/>
+		</Open_Question>
+	</Survey_Page>
+	<Invitee_Fields>
+		<p>Your role as a clinician, educator, researcher or staff member in the health sciences or as faculty member at UCLA or an affiliated site makes your participation in this survey very important. Completing the survey will not take 	much time, probably no more than 1 minute, depending on your level of involvement in comparative effectiveness research.  Thank you again for your participation in project.</p>
+		<salutation>
+			<label>Select the saluation to use in email messages to you:</label>
+			<values>
+				<value>Dr.</value>
+				<value>Mr.</value>
+				<value>Ms.</value>
+			</values>
+		</salutation>
+		<firstname>
+			<label>First name</label>
+		</firstname>
+		<lastname>
+			<label>Last name (required)</label>
+		</lastname>
+		<email>
+			<label>Email address</label>
+		</email>
+		<phone>
+			<label>Best phone number</label>
+		</phone>
+	</Invitee_Fields>
+	</Survey>
+
+

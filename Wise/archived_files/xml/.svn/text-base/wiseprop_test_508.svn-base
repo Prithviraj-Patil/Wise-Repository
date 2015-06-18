@@ -1,0 +1,39 @@
+# This is the property file for WISE system
+#DATABASE
+mysql.server = sagedb.arc2.ucla.edu
+#EMAIL
+email.host = smtp.medctr.ucla.edu
+alert.email = dbell@mednet.ucla.edu
+wise.email.from = merg@mednet.ucla.edu
+wise.email.username = ad/merg
+wise.email.password = rewis7
+#wise.email.reply = Jerilyn Higa <jhiga@mednet.ucla.edu>
+#BASIC PATHS
+admin.server = http://localhost:8080/wise_admin_test/
+app_to_shared_files.linkName = file_test
+db_backup.path = /CME/DB_BACKUP/
+xml_root.path = /CME/WISE_XML/
+shared_files.path = /CME/WISE_pages_test/
+shared_image.path = /CME/WISE_pages_test/images/
+shared_style.path = /CME/WISE_pages_test/style/
+#STUDIES (NOTE dirName is optional; defaults to study name itself)
+dme.studyid = 15
+dme.server = http://localhost:8080
+dme.serverApp = wise_test
+dme.sharedFiles_linkName = file_test
+dme.dirName = dme
+dme.dbuser = dme
+dme.dbpass = rwjfnl
+dme.dbname = dme_data
+dme.proj.title = Diabetes Experts Online Education Trial
+iaims.studyid = 19
+iaims.server = http://online.cme.ucla.edu
+iaims.serverApp = wise_test
+iaims.sharedFiles_linkName = file_test
+iaims.dbuser = drew
+iaims.dbpass = ndstry
+iaims.dbname = rcmi_tech
+iaims.proj.title = UCLA InfoShare surveys
+dbell.username = ad/dbell
+dbell.password = Pclvnds7
+#End of the file

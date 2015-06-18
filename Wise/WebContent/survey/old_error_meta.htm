@@ -1,0 +1,212 @@
+<html>
+
+<head>
+
+<title>Web-based Interactive Survey Environment (WISE) - Browser
+Check</title>
+
+<link rel="stylesheet" href="styleRender?app=&css=style.css" type="text/css">
+<script language="JavaScript">
+
+/*
+
+var locate = document.location;
+
+str=locate.toString();
+
+if(str.indexOf("?")!=-1)
+{
+	url_arg = str.substring(str.indexOf("w=")+2, str.length);
+}
+document.write("<meta http-equiv=\"refresh\" content=\"0; URL="+ url_arg +"\">\n");
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+
+}
+
+MM_reloadPage(true);
+
+*/
+
+
+
+
+
+
+
+function MM_findObj(n, d) { //v4.0
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+
+}
+
+
+
+function MM_showHideLayers() { //v3.0
+
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+
+    obj.visibility=v; }
+
+  window.focus();
+
+}
+
+
+
+setTimeout("MM_showHideLayers('Layer1','','hide')", 2000)
+
+</script>
+
+</head>
+
+<body>
+<!-- <body bgcolor="#FFFFCC" text="#000000"> -->
+
+
+<div align=center id="Layer1"
+	style="position: absolute; width: 600px; height: 660px; z-index: 1; left: 98px; top: 120px; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; visibility: visible">
+
+<br>
+
+<p align=center><font face="Verdana, Arial, Helvetica, sans-serif"
+	size="2">Retrieving the survey. One moment please...</font></p>
+</div>
+
+<table width="100%" cellspacing=1 cellpadding=9 align=left border="0">
+
+	<tr>
+
+		<td width="98" align="center" valign="top"><img
+			src="../imageRender?img=somlogo.gif" align="right" width="75" height="75"></td>
+
+		<td width="540" align="center" valign="middle"><img
+			src="../imageRender?img=title.gif" align="middle" width="400" height="50">
+
+		</td>
+
+		<td width="98" rowspan=9>&nbsp;</td>
+
+	</tr>
+
+	<tr>
+
+		<td width="98" rowspan=90>&nbsp;</td>
+
+		<td width="540" align="center" colspan="1"><img
+			src="../imageRender?img=error.gif" width="100" height="30"></td>
+
+	</tr>
+
+	<tr>
+
+		<td width="540" align=left colspan="1">
+
+		<div style="margin-left: 6em">For proper use of our system, the
+		following requirements must be met:<br>
+
+		1. JavaScript must be enabled;<br>
+
+		2. Java must be enabled;<br>
+
+		3. the Active Scripting option, if available, must be enabled;<br>
+
+		4. Meta Refresh must be allowed; and<br>
+
+		5. submission of nonencrypted form data must be allowed.<br>
+		<br>
+
+		Apparently, <font color="red"><b>Meta Refresh</b></font> is not
+		allowed in your web browser. <br>
+
+
+
+		</div>
+
+		</td>
+
+	</tr>
+
+	<tr>
+
+		<td width="540" align=left colspan="1">
+
+		<div style="margin-left: 6em">To proceed, check the version of
+		your web browser. <br>
+		<br>
+
+		If your browser is Microsoft Internet Explorer, please go through the
+		following steps to enable meta refresh:<br>
+		<br>
+
+
+
+		1. Select 'Internet Options' from the Tools Menu<br>
+
+		2. Select 'Security'<br>
+
+		3. Select 'Custom' security level<br>
+
+		4. Under 'Settings-Miscellaneous', verify that 'allow META REFRESH' is
+		enabled <a name="netscapev"></a><br>
+		<br>
+		<br>
+
+		If your browser is Netscape, the meta refresh setting should already
+		be enabled.</div>
+		<br>
+		<br>
+
+		</td>
+
+	</tr>
+
+
+
+	<tr>
+
+		<td width="540" align=left colspan="1">
+
+		<div style="margin-left: 6em">If your browser settings are
+		correct, please click <a href="/wise_product/welcome">here</a> to
+		re-start.<br>
+		<br>
+		<!--a href="/wise_product/servlet/welcome_generate">here</a> to re-start.<br><br-->
+
+		If problems persist, please <a href="mailto:jhiga@mednet.ucla.edu">click
+		here</a> to contact the project office.</div>
+
+		</td>
+
+	</tr>
+
+	<tr>
+
+		<td width="540" align=center colspan="1"></td>
+
+	</tr>
+
+</table>
+
+</body>
+
+</html>
+

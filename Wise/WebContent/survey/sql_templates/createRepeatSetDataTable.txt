@@ -1,0 +1,7 @@
+CREATE TABLE repeat_set_${tableName}( 
+	 instance int(6) not null auto_increment, 
+	 invitee int(6) not null, instance_name text null, 
+	 ${otherColumns}
+	 PRIMARY KEY (instance),
+	 FOREIGN KEY (invitee) REFERENCES invitee(id) ON DELETE CASCADE
+	 )

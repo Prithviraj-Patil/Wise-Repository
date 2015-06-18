@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib
+END
+cos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/cos.jar
+END
+commons-dbcp-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/commons-dbcp-1.2.1.jar
+END
+activation.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/activation.jar
+END
+log4j-1.2.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/log4j-1.2.15.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/mail.jar
+END
+mysql-connector-java-3.1.12-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/lofts/WISE/!svn/ver/3/WebContent/WEB-INF/lib/mysql-connector-java-3.1.12-bin.jar
+END

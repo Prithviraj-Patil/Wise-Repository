@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+
+<!-- link href='../../survey/css/style.css' type=text/css rel=stylesheet-->
+<link href='../../survey/css/sidebar.css' type=text/css rel=stylesheet>
+<link href='../../css/bootstrap.min.css' type=text/css rel=stylesheet>
+<!-- link href='../../survey/css/progress.css' type=text/css rel=stylesheet-->
+
+<script type='text/javascript' src='../../survey/js/main.js'></script>
+<script type='text/javascript' src='../../survey/js/survey.js'></script>
+<script type='text/javascript' src='../../js/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='../../js/bootstrap.js'></script>
+<script type='text/javascript'
+	src='../../survey/js/survey_form_values_handler.js'></script>
+<script type='text/javascript' src='../../survey/js/div_effects.js'></script>
+<script type='text/javascript'>
+	top.fieldVals = null;
+	top.requiredFields = null;
+</script>
+<title>Web-based Interactive Survey Environment (WISE)</title>
+</head>
+<body onload='javascript: setFields();check_preconditions();'>
+	<div id='wrapper'>
+		<div id='sidebar-wrapper'>
+				<ul class="sidebar-nav">
+					<li class="sidebar-brand"><a href="#">Survey Pages</a></li>
+					<li><a href="#">Page 1</a></li>
+					<li class="current-page"><a href="#">Page 2</a></li>
+					<li><a href="#">Page 3</a></li>
+					<li><a href="#">Page 4</a></li>
+					<li><a href="#">Page 5</a></li>
+					<li><a href="#">Page 6</a></li>
+					<li><a href="#">Page 7</a></li>
+				</ul>
+		</div>
+		<div id='page-content-wrapper'>
+			<div class="page-content-inset">
+				<div class="row">
+					<script type='text/javascript'>
+						top.requiredFields = null;
+						top.fieldVals = null;
+					</script>
+					<form name='mainform' method='post' action='readform'>
+						<input type='hidden' name='action' value=''> <input
+							type='hidden' name='nextPage' value='DONE'>
+						<div>//--Open Question goes here--</div>
+						<div>//--Closed Question goes here--</div>
+						<div>//--Question Block goes here--</div>
+						<div>//--Repeating Question goes here--</div>
+
+
+						<a
+							href="javascript:document.forms['mainform'].action.value='interrupt';document.forms['mainform'].submit()">
+
+
+							<img src='../../survey/images/save.gif' alt='save'
+							style='margin: 1ex'>
+						</a> <a href='javascript:check_and_submit();'> <img
+							src='../../survey/images/save_and_next_page.gif'
+							alt='save and next page' style='margin: 1ex' />
+						</a>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

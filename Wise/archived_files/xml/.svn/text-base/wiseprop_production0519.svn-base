@@ -1,0 +1,52 @@
+# This is the property file for WISE system
+# mysql.url= jdbc:mysql://sagedb.arc2.ucla.edu/
+mysql.server = sagedb.arc2.ucla.edu
+#EMAIL
+email.host = smtp.medctr.ucla.edu
+alert.email = dbell@mednet.ucla.edu
+# DEPRECATED format (preserved for jgreen survey on SAGE)
+email.from = <merg@mednet.ucla.edu>
+email.reply = Jerilyn Higa <jhiga@mednet.ucla.edu>
+mail.username = ad/merg
+mail.password = rewis7
+#NEW format
+wise.email.from = merg@mednet.ucla.edu
+wise.email.username = ad/merg
+wise.email.password = rewis7
+dbell.username = ad/dbell
+dbell.password = Pclvnds7
+#BASIC & default PATHS
+admin.server = https://auth.cme.ucla.edu/wise_admin/
+app_to_shared_files.linkName = file_product
+db_backup.path = /CME/DB_BACKUP/
+xml_root.path = /CME/WISE_XML/
+shared_files.path = /CME/WISE_pages_product/
+shared_image.path = /CME/WISE_pages_product/images/
+shared_style.path = /CME/WISE_pages_product/style/
+#STUDIES (NOTE dirName is optional; defaults to study name itself)
+dme.studyid = 15
+dme.server = http://localhost:8080
+dme.serverApp = wise_product
+dme.sharedFiles_linkName = file_product
+dme.dirName = dme
+dme.dbuser = dme
+dme.dbpass = rwjfnl
+dme.dbname = dme_data
+dme.proj.title = Diabetes Experts Online Education Trial
+jgreen.studyid = 18
+jgreen.server = http://wise.cme.ucla.edu
+jgreen.serverApp = wise_product
+jgreen.sharedFiles_linkName = file_product
+jgreen.dbuser = jgreen
+jgreen.dbpass = resibaba
+jgreen.dbname = res_decis
+jgreen.proj.title = Resident decision making study
+iaims.studyid = 19
+iaims.server = http://online.cme.ucla.edu
+iaims.serverApp = wise_product
+iaims.sharedFiles_linkName = file_product
+iaims.dbuser = drew
+iaims.dbpass = ndstry
+iaims.dbname = rcmi_tech
+iaims.proj.title = UCLA InfoShare surveys
+#End of the file

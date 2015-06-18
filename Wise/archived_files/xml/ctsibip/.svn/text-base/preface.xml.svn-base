@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Douglas S Bell (private) -->
+<?xml-stylesheet type="text/xsl" href="Preface.xsl"?>
+<Preface Project_Name="E-Prescribing User Survey " xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://online.cme.ucla.edu/schemata/WisePreface_v1.2.xsd">
+	<!-- <IRB ID="ucla" Name="UCLA IRB" Logo_File="ucla.gif"/>  -->
+	<Message_Sequence ID="Main_seq" Survey_ID="BIP_user" From_Email="dbell@mednet.ucla.edu" From_String="Douglas S. Bell, MD, PhD">
+		<Initial_Invitation ID="invite" Subject="The CTSI Informatics Survey -- Register your needs and experiences">
+			<p>The UCLA Clinical and Translational Sciences Institute (CTSI) is conducting a brief survey to characterize the informatics-related activities and needs of each UCLA CTSI member. The survey also assesses the extent to which these needs are currently being met. All registered members of the CTSI are being invited to participate. </p>
+			<!--Responses to the survey questions will determine who we invite to pilot test services such as the research data repository. At the end of the survey you will also have the option of using the information you provide to update your profile on the CTSI Virtual Home-->
+			<p>Your answers will serve to register your expertise and your interest in specific services. We will conduct focused followup based on the results. </p>
+			<p>The survey should take no more than 10 minutes and if you complete it in 1 week you'll be entered into a raffle for an iPad.</p>
+			<p link="begin">To begin the survey, please go to the following link:</p>
+			<link/>
+			<p>If you have any questions about the survey, please call (310) 794-3168 or send email.</p>
+			<s>Thank you very much!</s>
+			<s>Douglas S. Bell, MD, PhD</s>
+			<s>Associate Professor, Department of Medicine, David Geffen School of Medicine at UCLA</s>
+		</Initial_Invitation>
+		<Start_Reminder ID="SR1" Subject="Reminder -- CTSI Informatics Survey" Trigger_Days="5" Max_Count="2">
+			<p>This is a friendly reminder that we're still hoping for your participation in the CTSI Informatics Survey. This survey will provide critical guidance for the CTSI Biomedical Informatics Program. We need your answers by Friday, 11/25/11 in order to move forward with CTSI planning.</p>
+			<p>To begin, please go to the following link:</p>
+			<link/>
+			<p>If you don't want to participate, you can use the following Web address to decline participation now. Using this link will prevent us from contacting you again about this survey:</p>
+			<declineLink/>
+			<s>Sincerely,</s>
+			<s>Douglas S. Bell, MD, PhD</s>
+			<s>Associate Professor, Department of Medicine, David Geffen School of Medicine at UCLA</s>
+		</Start_Reminder>
+		<Start_Reminder ID="SR2" Subject="CTSI Informatics Survey -- Final invitation" Trigger_Days="2" Max_Count="1">
+			<p>This is your last reminder about participating in the CTSI Informatics Survey. As you know, this will provide critical guidance for the CTSI Biomedical Informatics Program. </p>
+			<p>Please take a moment now to complete the survey. The survey should take no more than 30 minutes and you would be paid $25 for completing it. We need your answers by Friday, 11/25/11 in order to move forward with CTSI planning.</p>
+			<p>To begin, please go to the following link:</p>
+			<link/>
+			<s>Thank you very much!</s>
+			<s>Douglas S. Bell, MD, PhD</s>
+			<s>Associate Professor, Department of Medicine, David Geffen School of Medicine at UCLA</s>
+		</Start_Reminder>
+		<Interrupt ID="interrupt1" Subject="CTSI Informatics Survey -- Survey interrupted">
+			<p>Thank you for starting the CTSI Informatics Survey. This message is a reminder that you were interrupted before completing the survey.</p>
+			<p>Please resume the survey at your earliest opportunity by clicking on the Web address below:</p>
+			<link/>
+			<p>Thank you very much!</p>
+			<s>Douglas S. Bell, MD, PhD</s>
+			<s>Associate Professor, Department of Medicine, David Geffen School of Medicine at UCLA</s>
+		</Interrupt>
+		<Completion_Reminder ID="CR1" Subject="CTSI Informatics Survey -- Final interrupted reminder" Trigger_Days="3" Max_Count="1">
+			<p>Thank you for having started the CTSI Informatics Survey. We are still hoping you will return to complete the survey. </p>
+			<p>Please take a moment now to resume the survey. Remember that you need to complete the survey to qualify for the iPad raffle. </p>
+			<p>To resume, please go to the following link:</p>
+			<link/>
+			<p>Please call (310) 794-3168, or send email if you have any questions or concerns.</p>
+			<s>Thank you very much!</s>
+			<s>Douglas S. Bell, MD, PhD</s>
+			<s>Associate Professor, Department of Medicine, David Geffen School of Medicine at UCLA</s>
+		</Completion_Reminder>
+	</Message_Sequence>
+	<Welcome_Page ID="w1" Survey_ID="BIP_user" LogoFileName="w1_logo.jpg" BannerFileName="title.gif" Title="CTSI Informatics Survey">
+		<p>Welcome to the CTSI Informatics Survey. Thank you for the valuable guidance that you're providing.</p>
+		<p>Your answers will also serve to register your expertise and your interest in specific services. We will conduct focused followup based on the results. </p>
+	</Welcome_Page>
+	<ThankYou_Page ID="thx" Survey_ID="BIP_user"  LogoFileName="w1_logo.jpg" BannerFileName="title.gif" Title="Thank You">
+		<p>Thank you very much for completing the CTSI Informatics Survey.</p>
+		<html_content><![CDATA[ If you have questions about this survey, please email<a href="mailto:dbell@mednet.ucla.edu">Douglas Bell, MD, PhD</a>.]]></html_content>
+		<p>Thank you!</p>
+	</ThankYou_Page>
+</Preface>
+<!-- IRB_ID="ucla"  --> 

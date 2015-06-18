@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Douglas S Bell (private) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Douglas S Bell (private) -->
+<?xml-stylesheet type="text/xsl" href="survey_pro2.xslt"?>
+<Survey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WiseSurvey_v1.xsd" ID="BIP_user" Title="UCLA CTSI Biomedical Informatics Survey" Version="0.3" Project_Name="ctsibip" From_Email="dbell@mednet.ucla.edu" Allow_Goback="true">
+	<Survey_Page ID="Aims_experience" Title="Informatics-related activities">
+		<!--Your answers will serve to register your expertise and your interest in specific services. We will conduct focused followup based on the results. -->
+		<Directive>
+			<span class="keyWords">Rate the relevance (or potential relevance) of each of the following activities to your work.</span>
+		</Directive>
+		<Directive>Please rate each item carefully. You will only be asked additional questions about the activities that are relevant to you.</Directive>
+		<Question_Block Name="activities">
+			<Stem>
+				<span class="subQ">Activity</span>
+			</Stem>
+			<Response_Set ID="relevance" Levels="6" StartValue="0">
+				<Response_Option>Not relevant to my work</Response_Option>
+				<Response_Option>Critical to my work</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Manage the on-time completion of grant or project proposals</Sub_Stem>
+			<Sub_Stem>Find collaborators who have specific skills needed for a project team</Sub_Stem>
+			<Sub_Stem>Identify CTSI members whose work is similar to mine</Sub_Stem>
+			<Sub_Stem name="activities_4">Obtain counts of patients who meet proposed inclusion/exclusion criteria, broken down by race-ethnicity and gender</Sub_Stem>
+			<Sub_Stem name="activities_5">Identify and recruit patients who meet inclusion/exclusion criteria for IRB-approved studies</Sub_Stem>
+			<Sub_Stem name="activities_6">Analyze medical record data (including labs, notes, etc.) from your own organization or a partner institution</Sub_Stem>
+			<Sub_Stem>Analyze public data sets (such as census, NAMCS, etc.)</Sub_Stem>
+			<Sub_Stem>Analyze non-public health care data (such as claims, disease registries, etc.)</Sub_Stem>
+			<Sub_Stem>Collect survey data (from people)</Sub_Stem>
+			<Sub_Stem>Collect, manage or analyze genomic data</Sub_Stem>
+			<Sub_Stem>Collect, manage or analyze imaging data</Sub_Stem>
+			<Sub_Stem>Collect, manage or analyze human biospecimens</Sub_Stem>
+			<Sub_Stem>Collect, manage or analyze other tests on human subjects</Sub_Stem>
+			<Sub_Stem>Conduct research with members of specific target communities (e.g. neighborhoods, regions, race-ethnicities, etc.)</Sub_Stem>
+			<Sub_Stem>Conduct animal research</Sub_Stem>
+		</Question_Block>
+	</Survey_Page>
+	<Survey_Page Title="Access to clinical data" ID="xdr">
+		<Precondition>
+			<apply>
+				<field>activities_4</field>
+				<gt/>
+				<cn>1</cn>
+			</apply>
+			<or/>
+			<apply>
+				<apply>
+					<field>activities_6</field>
+					<gt/>
+					<cn>1</cn>
+				</apply>
+				<or/>
+				<apply>
+					<field>activities_5</field>
+					<gt/>
+					<cn>1</cn>
+				</apply>
+			</apply>
+		</Precondition>
+		<Question_Block Name="datatypes">
+			<Stem>What relative value would each of following data types have in your research (either for cohort identification and recruitment or for secondary data analysis) if it were available in a research data repository from one or more of the four CTSI institutions (Cedars-Sinai, Harbor-UCLA, Charles Drew/Hubert Humphrey, and UCLA Medical Center)</Stem>
+			<Response_Set ID="relativeValue" Levels="5" StartValue="0">
+				<Response_Option>Little or no value</Response_Option>
+				<Response_Option>Very high value</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Ambulatory billing diagnoses</Sub_Stem>
+			<Sub_Stem>Hospital discharge diagnoses</Sub_Stem>
+			<Sub_Stem>Vital signs</Sub_Stem>
+			<Sub_Stem>Laboratory test results</Sub_Stem>
+			<Sub_Stem>Medication orders (prescriptions)</Sub_Stem>
+			<Sub_Stem>Imaging reports</Sub_Stem>
+			<Sub_Stem>Pathology reports</Sub_Stem>
+			<Sub_Stem>Cardiodiagnostic test results</Sub_Stem>
+			<Sub_Stem>Other specialty test resutls</Sub_Stem>
+			<Sub_Stem>Outpatient problem lists</Sub_Stem>
+			<Sub_Stem>Outpatient prescription fill data</Sub_Stem>
+			<Sub_Stem>Hospital discharge summaries</Sub_Stem>
+			<Sub_Stem>Advanced directive status</Sub_Stem>
+			<Sub_Stem>Progress notes, consults and other documents</Sub_Stem>
+		</Question_Block>
+		<Open_Question Name="example_question">
+			<Stem>Please provide an example of a research question that you would be interested in pursuing using these data sources</Stem>
+			<Text_Open_Response MultiLine="true" MaxSize="512" Height="4" Width="60"/>
+		</Open_Question>
+	</Survey_Page>
+	<Survey_Page Title="UC-wide studies" ID="ucrex">
+		<Precondition>
+			<field>activities_4</field>
+			<gt/>
+			<cn>1</cn>
+		</Precondition>
+		<Closed_Question Name="UC_Rex">
+			<Stem>How valuable would you find it to run patient-count queries across all five University of California medical centers (UCLA, UC Irvine, UCSD, UCSD, UC Davis)</Stem>
+			<Response_Set_Ref Response_Set="relativeValue"/>
+		</Closed_Question>
+		<Closed_Question Name="pilot">
+			<Stem>Would you be interested in helping to pilot test such a system in the context of developing a multi-center resarch proposal?</Stem>
+			<Response_Set_Ref Response_Set="yes_no"/>
+		</Closed_Question>
+	</Survey_Page>
+	<Survey_Page Title="About You" ID="demographics">
+		<Closed_Question Name="role" RCardinality="MultiSelect">
+			<Stem>What are your primary roles at your institution?</Stem>
+			<Response_Set ID="roles">
+				<Response_Option>Clinician</Response_Option>
+				<Response_Option>Researcher</Response_Option>
+				<Response_Option>Administrator</Response_Option>
+				<Response_Option>Research coordinator</Response_Option>
+				<Response_Option>Educator</Response_Option>
+				<Response_Option>Support services</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+	</Survey_Page>
+	<Response_Set ID="self_efficacy_options">
+		<Response_Option>Not at all confident</Response_Option>
+		<Response_Option>Somewhat confident</Response_Option>
+		<Response_Option>Moderately confident</Response_Option>
+		<Response_Option>Very confident</Response_Option>
+		<Response_Option>Extremely confident</Response_Option>
+	</Response_Set>
+	<Response_Set ID="Likert">
+		<Response_Option>Strongly Disagree</Response_Option>
+		<Response_Option>Disagree</Response_Option>
+		<Response_Option>Neutral</Response_Option>
+		<Response_Option>Agree</Response_Option>
+		<Response_Option>Strongly Agree</Response_Option>
+	</Response_Set>
+	<Response_Set ID="yes_no">
+		<Response_Option>No</Response_Option>
+		<Response_Option>Yes</Response_Option>
+	</Response_Set>
+	<Response_Set ID="success_levels">
+		<Response_Option>I'm not aware of systems to support this</Response_Option>
+		<Response_Option>I'm aware of systems for this but have not tried them</Response_Option>
+		<Response_Option>I've tried information systems for this but never succeeded</Response_Option>
+		<Response_Option>Can succeed with great effort</Response_Option>
+		<Response_Option>Can succeed with moderate effort</Response_Option>
+		<Response_Option>Can succeed with low effort</Response_Option>
+	</Response_Set>
+</Survey>

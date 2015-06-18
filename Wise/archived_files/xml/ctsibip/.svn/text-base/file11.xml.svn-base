@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Douglas S Bell (private) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Douglas S Bell (private) -->
+<?xml-stylesheet type="text/xsl" href="survey_pro2.xslt"?>
+<Survey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WiseSurvey_v1.xsd" ID="BIP_user" Title="UCLA CTSI Biomedical Informatics Survey" Version="0.3" Project_Name="ctsibip" From_Email="dbell@mednet.ucla.edu" Allow_Goback="true">
+	<Survey_Page ID="Aims_experience" Title="Experience, confidence">
+		<Directive>
+			<span class="heading">Characteristics</span>
+		</Directive>
+		<Directive>Please answer each question carefully. Your answers will serve to register your expertise and your interest in specific services. We will conduct focused followup based on the results. <span class="keyPhrase">Thank you for participating!</span>
+		</Directive>
+		<Question_Block Name="Experience3">
+			<Stem>Please rate your current ability to perform each of the following activities. Select N/A if the activity is not applicable to your work.</Stem>
+			<Response_Set ID="researchActivities">
+				<Response_Option>Not applicable to my work</Response_Option>
+				<Response_Option>Never tried</Response_Option>
+				<Response_Option>Tried, unsuccessfully</Response_Option>
+				<Response_Option>Can succeed with great effort</Response_Option>
+				<Response_Option>Can succeed with moderate effort</Response_Option>
+				<Response_Option>Can succeed with low effort</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Identify collaborators who have skills needed for a project team</Sub_Stem>
+			<Sub_Stem>Identify CTSI members whose work is similar to mine</Sub_Stem>
+			<Sub_Stem>Produce competitive grant or project proposals on time</Sub_Stem>
+		</Question_Block>
+		<Closed_Question Name="Patient">
+			<Stem>Do you conduct research with patients having specific </Stem>
+			<Response_Set_Ref Response_Set="yes_no"/>
+		</Closed_Question>
+	</Survey_Page>
+	<Survey_Page ID="comp_attitudes" Title="Computers">
+		<Closed_Question Name="sophistication" RCardinality="Exclusive">
+			<Stem>How sophisticated a computer user do you consider yourself?</Stem>
+			<Response_Set ID="list_sophistication">
+				<Response_Option>Very sophisticated</Response_Option>
+				<Response_Option>Sophisticated</Response_Option>
+				<Response_Option>Neither sophisticated nor unsophisticated</Response_Option>
+				<Response_Option>Unsophisticated</Response_Option>
+				<Response_Option>Very unsophisticated</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<!-- NOTE: The following questions are adapted from the Van Braak Computer Attitudes and Attributes survey (Psychological Reports, 2003)-->
+		<Question_Block Name="computer_attitudes">
+			<Stem>Please rate your agreement with each of the statements below:</Stem>
+			<Response_Set_Ref Response_Set="Likert"/>
+			<Sub_Stem>Computers increase the quality of my work</Sub_Stem>
+			<Sub_Stem>Computers increase my efficiency at work</Sub_Stem>
+			<Sub_Stem>Computer use is a necessity in my work</Sub_Stem>
+			<Sub_Stem>I could be more effective at work if more things were computerized</Sub_Stem>
+			<Sub_Stem>Computers make me uneasy</Sub_Stem>
+			<Sub_Stem>I like working with computers</Sub_Stem>
+			<Sub_Stem>I have more negative than positive experiences with computers</Sub_Stem>
+			<Sub_Stem>Learning about computers is too time consuming</Sub_Stem>
+		</Question_Block>
+	</Survey_Page>
+	<Survey_Page ID="demographics" Title="About You">
+		<Closed_Question Name="gender" RCardinality="Exclusive" oneLine="true">
+			<Stem>Gender:</Stem>
+			<Response_Set ID="gender_set">
+				<Response_Option>Female</Response_Option>
+				<Response_Option>Male</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="age" oneLine="true">
+			<Stem>Age (years):</Stem>
+			<Numeric_Open_Response MaxSize="3" MinValue="20" MaxValue="65"/>
+		</Open_Question>
+		<Directive>
+			<span class="keyPhrase">The following questions will be used only to check the diversity of our participants.</span>
+		</Directive>
+		<Closed_Question Name="ethnicity" RCardinality="Exclusive" oneLine="true">
+			<Stem>Do you consider yourself Hispanic or Latino/Latina?</Stem>
+			<Response_Set_Ref Response_Set="yes_no"/>
+		</Closed_Question>
+		<Closed_Question Name="race" RCardinality="MultiSelect">
+			<Stem>Which categories best describe your race?</Stem>
+			<Response_Set ID="list_raceeth">
+				<Response_Option>American Indian or Alaska Native</Response_Option>
+				<Response_Option>Asian</Response_Option>
+				<Response_Option>Black or African American</Response_Option>
+				<Response_Option>Native Hawaiian or Other Pacific Islander</Response_Option>
+				<Response_Option>White</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="other_race">
+			<Stem>
+				<span class="subQ">If none of the race options above apply, please enter your race here:</span>
+			</Stem>
+			<Text_Open_Response MaxSize="40" MultiLine="false"/>
+		</Open_Question>
+	</Survey_Page>
+	<Response_Set ID="self_efficacy_options">
+		<Response_Option>Not at all confident</Response_Option>
+		<Response_Option>Somewhat confident</Response_Option>
+		<Response_Option>Moderately confident</Response_Option>
+		<Response_Option>Very confident</Response_Option>
+		<Response_Option>Extremely confident</Response_Option>
+	</Response_Set>
+	<Response_Set ID="Likert">
+		<Response_Option>Strongly Disagree</Response_Option>
+		<Response_Option>Disagree</Response_Option>
+		<Response_Option>Neutral</Response_Option>
+		<Response_Option>Agree</Response_Option>
+		<Response_Option>Strongly Agree</Response_Option>
+	</Response_Set>
+	<Response_Set ID="yes_no">
+		<Response_Option>No</Response_Option>
+		<Response_Option>Yes</Response_Option>
+	</Response_Set>
+	<Use_Invitee_Fields>
+		<Field_Name>subj_type</Field_Name>
+	</Use_Invitee_Fields>
+</Survey>

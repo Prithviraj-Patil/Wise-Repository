@@ -1,0 +1,69 @@
+admin/view_form.java:                admin_page.replaceAll("#SHAREDFILEURL#", sa.shared_file_url);
+begin.java:        //servlet_url, ApplicationName, shared_file_url or shared_image_url
+begin.java:                res.sendRedirect(appInstance.shared_file_url + "link_error" + WISE.Surveyor_Application.html_ext);
+begin.java:        if( (appInstance.shared_file_url != null) || (appInstance.shared_file_url.length() != 0))
+begin.java:        	main_url = "" + appInstance.shared_file_url + "error_meta" + WISE.Surveyor_Application.html_ext +
+begin.java:        if(appInstance.shared_file_url == null)
+begin.java:        	out.println("Surveyor_Application.shared_file_url is NULL!!");
+begin.java:        	out.println("Surveyor's shared URL is [" + appInstance.shared_file_url + "]");
+begin.java:		out.println("<frame name='mainFrame' src='"+ appInstance.shared_file_url +"error_javascript.htm'>");
+consent_decline.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+consent_decline.java:        String new_page= s.shared_file_url + "decline_thanks" + Surveyor_Application.html_ext;
+consent_generate.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+consent_generate.java:            consent_header += "<LINK href='"+ s.shared_file_url + "style.css' type=text/css rel=stylesheet>";
+consent_generate.java:            consent_notes += "<A href=\"javascript:FormSubmit('yes')\"><IMG src='"+s.shared_file_url + "images/accept.gif' border=0></A>";
+consent_generate.java:            consent_notes += "&nbsp;<A href=\"javascript:FormSubmit('no')\"><IMG src='"+s.shared_file_url + "images/decline.gif' border=0></A></DIV>";
+consent_record.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+consent_record.java:            url = s.shared_file_url + "decline" + Surveyor_Application.html_ext;
+declineNOW.java:            res.sendRedirect(s.shared_file_url + "link_error" + Surveyor_Application.html_ext);
+declineNOW.java:        String url = s.shared_file_url + "decline" + Surveyor_Application.html_ext;
+interview/interview_login.java:            url = s.shared_file_url +"interview/Show_Assignment.jsp";            
+interview/interview_logout.java:            url = s.shared_file_url +"interview/expired.htm";
+progress.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+readform.java:            res.sendRedirect(s.shared_file_url + "/error" + Surveyor_Application.html_ext);
+readform.java:            new_page = s.shared_file_url + "interrupt" + Surveyor_Application.html_ext;
+readform.java:            new_page = s.shared_file_url + "timeout" + Surveyor_Application.html_ext;
+readform.java:                new_page = s.shared_file_url + "interview/Show_Assignment.jsp"; 
+readform.java:                    new_page = s.shared_file_url + "thanks" + Surveyor_Application.html_ext;
+readform.java:                    new_page = s.shared_file_url + "/thanks.htm?review=" + review;
+setup_survey.java:            res.sendRedirect(WISE_Application.retrieveAppInstance(session).shared_file_url + "error" + Surveyor_Application.html_ext);
+setup_survey.java:            res.sendRedirect(WISE_Application.retrieveAppInstance(session).shared_file_url + "thanks" + Surveyor_Application.html_ext);
+src-common/WISE/Closed_Question.java://              s.replaceAll("#SHAREDFILEURL#", sa.shared_file_url);
+src-common/WISE/Closed_Question.java:              s += "<img src='"+ Surveyor_Application.shared_file_url_ref +"imgs/horizontal/bar_"+ps+".gif' ";
+src-common/WISE/Closed_Question.java:              s += "<img src='"+ Surveyor_Application.shared_file_url_ref +"imgs/horizontal/bar_"+ps+".gif' ";
+src-common/WISE/Page.java:        s += "<script type='text/javascript' language='JavaScript1.1' src='"+ Surveyor_Application.shared_file_url_ref +"survey.js'></script>";
+src-common/WISE/Page.java:        s +="<script type='text/javascript' language='javascript' src='"+ Surveyor_Application.shared_file_url_ref +"openhelpwin.js'></script>";
+src-common/WISE/WISE_Application.java:	//public static String servlet_url, shared_file_url; 
+src-common/WISE/Surveyor_Application.java:	public static final String shared_file_url_ref = "#SHAREDFILEURL#";
+src-common/WISE/Surveyor_Application.java:	public String shared_file_url;
+src-common/WISE/Surveyor_Application.java:    		if( (thisApp.ApplicationName == null) || (thisApp.servlet_url == null) || (thisApp.shared_file_url == null))
+src-common/WISE/Surveyor_Application.java:    	    newApp.shared_file_url = rootURL + newApp.ApplicationName + "/" + localProps.getProperty("default.sharedFiles_linkName") + "/";
+src-common/WISE/Surveyor_Application.java:    	    System.out.println("Manoj:Shared File URL is initialised to [" + newApp.shared_file_url + "]");
+src-common/WISE/Surveyor_Application.java:    	    newApp.shared_image_url = newApp.shared_file_url + "images/";
+src-common/WISE/Surveyor_Application.java:	    this.shared_file_url = rootURL + this.ApplicationName + "/" + localProps.getProperty("default.sharedFiles_linkName") + "/";
+src-common/WISE/Surveyor_Application.java:	    System.out.println("Manoj:Shared File URL is initialised to [" + this.shared_file_url + "]");
+src-common/WISE/Surveyor_Application.java:	    this.shared_image_url = this.shared_file_url + "images/";
+src-common/WISE/Surveyor_Application.java:	    shared_file_url = rootURL + ApplicationName + "/" + localProps.getProperty("default.sharedFiles_linkName") + "/";
+src-common/WISE/Surveyor_Application.java:	    System.out.println("Manoj:Shared File URL is initialised to [" + shared_file_url + "]");
+src-common/WISE/Surveyor_Application.java:	    shared_image_url = shared_file_url + "images/";
+triage.java:            res.sendRedirect(WISE_Application.retrieveAppInstance(session).shared_file_url + "error" + Surveyor_Application.html_ext);
+triage.java:                    main_url = WISE_Application.retrieveAppInstance(session).shared_file_url + "thanks" + Surveyor_Application.html_ext;
+triage.java:                      main_url = WISE_Application.retrieveAppInstance(session).shared_file_url + "thanks" + Surveyor_Application.html_ext+"?review=false";
+t.txt:begin.java:        	out.println("Surveyor_Application.shared_file_url is NULL!!");
+t.txt:begin.java:        	out.println("Surveyor's shared URL is [" + appInstance.shared_file_url + "]");
+t.txt:begin.java:		out.println("<frame name='mainFrame' src='"+ appInstance.shared_file_url +"error_javascript.htm'>");
+t.txt:view_open_results.java:      out.println("<LINK href='"+s.shared_file_url +"style.css' rel=stylesheet>");
+t.txt:view_open_results.java:    out.println("<img src='"+s.shared_file_url +"images/close.gif' border=0></a></center>");
+view_form.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+view_form.java:            		"<script type='text/javascript' language='JavaScript1.1' src='"+ s.shared_file_url +"survey.js'></script>");
+view_open_results.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+view_open_results.java:      out.println("<LINK href='"+s.shared_file_url +"style.css' rel=stylesheet>");
+view_open_results.java:    out.println("<img src='"+s.shared_file_url +"images/close.gif' border=0></a></center>");
+view_results.java:            res.sendRedirect(s.shared_file_url + "error" + Surveyor_Application.html_ext);
+welcome_generate.java:            res.sendRedirect(WISE_Application.retrieveAppInstance(session).shared_file_url + "error" + Surveyor_Application.html_ext);
+wise_outer_frame.java://		"<script type='text/javascript' language='javascript' src='"+ Surveyor_Application.shared_file_url +"main.js'></script>" +
+wise_outer_frame.java://		"<script type='text/javascript' language='javascript' SRC='"+ Surveyor_Application.shared_file_url +"survey.js'></script>" +
+wise_outer_frame.java://		"  <frame name='topFrame' scrolling='NO' noresize src='"+ Surveyor_Application.shared_file_url +"begin_fix.htm' >" +
+wise_outer_frame.java:    		"<script type='text/javascript' language='javascript' src='"+ s.shared_file_url +"main.js'></script>" +
+wise_outer_frame.java:    		"<script type='text/javascript' language='javascript' SRC='"+ s.shared_file_url +"survey.js'></script>" +
+wise_outer_frame.java:    		"  <frame name='topFrame' scrolling='NO' noresize src='"+ s.shared_file_url +"begin_fix.htm' >" +

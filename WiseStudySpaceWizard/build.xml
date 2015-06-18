@@ -1,0 +1,120 @@
+<?xml version="1.0" ?> 
+<!DOCTYPE project>
+<project name="WiseStudySpaceWizard" default="dist" basedir=".">
+
+    <property file="build.${os.name}.properties" />
+    <property file="build.properties" />
+	
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="dist.dir" value="${basedir}/dist" />
+    <property name="src.dir" value="${basedir}/src" />
+    <property name="bin.dir" value="${build.dir}/classes" />
+     
+    <property name="compile.debug" value="true" />
+    <property name="compile.deprecation" value="false" />
+    <property name="compile.source" value="1.7" />
+    <property name="compile.target" value="1.7" />
+    <property name="compile.optimize" value="true" />
+	
+	 <property name="shared.dir"  value="${basedir}/../WiseShared"/>
+	
+	<path id="compile.classpath">
+        <fileset dir="${shared.dir}/dist">
+                <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${shared.dir}/lib">
+                <include name="*.jar" />
+        </fileset>
+        <fileset dir="${tomcat.home}/lib">
+                <include name="**/servlet-api.jar" />
+        </fileset>
+        <pathelement location="${bin.dir}" />
+	</path>
+	
+    <path id="run.classpath">
+            <path refid="compile.classpath" />
+            <pathelement location="${test.bin.dir}" />
+    </path>
+	
+	<target name="dist" description="Build dist files" depends="clean,jar,war" />
+	
+    <target name="prepare">
+            <!-- Create build directories as needed -->
+            <mkdir dir="${dist.dir}" />
+            <mkdir dir="${bin.dir}" />
+    </target>
+	
+	<target name="compile" depends="prepare" >
+        <!-- Compile Java classes as necessary -->
+        <javac srcdir="${src.dir}" 
+                   destdir="${bin.dir}" 
+                   debug="${compile.debug}" 
+                   deprecation="${compile.deprecation}" 
+           source="${compile.source}"
+           target="${compile.target}"
+                   optimize="${compile.optimize}"
+                includeantruntime="false">
+                <classpath refid="compile.classpath" />
+        </javac>
+        <copy todir="${bin.dir}">
+                <fileset dir="${src.dir}">
+                        <include name="**/*.properties" />
+                </fileset>
+        </copy>
+	</target>
+	
+	<target name="war">
+        <antcall target="war_impl">
+                <param name="war_name" value="${dist.dir}/${ant.project.name}.war" />
+                <param name="conf_dir" value="conf/production" />
+        </antcall>
+        <antcall target="war_impl">
+                <param name="war_name" value="${dist.dir}/Test${ant.project.name}.war" />
+                <param name="conf_dir" value="conf/dev" />
+        </antcall>
+	</target>
+	
+	<target name="war_impl" depends="jar">
+		<war destfile="${war_name}" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<fileset dir=".">
+			    <include name="**/SqlScripts/**"/>
+			</fileset>
+			<fileset dir="${conf_dir}">
+				<exclude name="log4j.properties" />
+			</fileset>
+			<lib dir="${shared.dir}/lib">
+				<include name="*guava*.jar"/>
+				<include name="*log4j*.jar"/>
+				<include name="*mysql*.jar"/>
+				<include name="*gson*.jar" />
+				<include name="*jasypt*.jar" />
+			</lib>
+			<lib dir="${shared.dir}/dist">
+				<include name="*.jar"/>
+			</lib>
+			<classes dir="${bin.dir}" />
+			<classes dir ="${conf_dir}">
+				<include name="log4j.properties" />
+			</classes>
+		</war>
+	</target>
+	
+	<target name="jar" depends="compile">
+	        <jar destfile="${dist.dir}/${ant.project.name}.jar">
+                <fileset dir="${bin.dir}" excludes="**/Test.class" />
+                <fileset dir="${src.dir}" includes="META-INF/**" />
+                <fileset dir="${build.dir}" includes="${ant.project.name}_git.txt" />
+	        </jar>
+	</target>
+	
+	<target name="clean">
+		<delete includeemptydirs="true">
+		    <fileset dir="build" includes="**/*"/>
+		</delete>
+		<delete includeemptydirs="true">
+		    <fileset dir="dist" includes="**/*"/>
+		</delete>
+	</target>
+	
+</project>

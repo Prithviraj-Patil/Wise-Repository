@@ -1,0 +1,30 @@
+NOTE: Please read and understand the instructions below completely. If you run into problems, please contact the developers for assistance.
+
+#<---- PREREQUISITES ---->
+
+1. An installation of Tomcat 7 server.
+2. An installation of MySql server and an account with "root" privileges.
+3. An account (user login and password) on an email server that allows SMTP-based access.
+
+#<---- END OF PREREQUISITES ---->
+
+#<---- DEPLOYING WISE ---->
+
+1. The "latest binaries" folder contains 2 was files: "WISE-*.war" and "WiseStudySpaceWizard-*.war". These files can be deployed to Tomcat 7 web server by copying them over to the server's "webapp" subdirectory.
+2. The configuration file "wise.properties" for "WISE-*.war" should be in folder referenced by a "WISE_HOME" environment variable.
+3. The configuration file "studyspacewizard.properties" for "WiseStudySpaceWizard-*.war" should be in a folder referenced by a "WISE_SSW_HOME" environment variable. Normally, both "WISE_HOME" and "WISE_SSW_HOME" can point to the same directory.
+4. Before deploying the war files to the Tomcat server, make sure that all the properties are set in the "wise.properties" file and the "studyspacewizard.properties" file. If these are not set, the applications will not initialize.
+Also make sure that a MySql server instance is up and running, and its connection parameters are set in both the properties files.
+5. The initialization logs can be found in the "logs" folder in the Tomcat directory. Check the log files to see if there are any initialization errors.
+
+#<---- END OF WISE DEPLOYMENT ---->
+
+#<---- BUILDING WISE ---->
+
+Prerequisites: An installation of Apache Ant is required for building the code. The "ant" command should be made available on "PATH"
+
+1. Download the code from https://github.com/ctsidev/SecureWise
+2. Build scripts are located in "latest binaries/run scripts". The instructions to configure and run the script are provided in the scripts. Use the "*.bat" file for Windows and "*.sh" for Unix/Linux.
+3. Once the "*.war" files are built by the scripts, you can use these to deploy by following the steps described in "<---- DEPLOYING WISE ---->".
+
+#<---- END OF WISE BUILD ---->

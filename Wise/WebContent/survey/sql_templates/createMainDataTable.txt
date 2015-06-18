@@ -1,0 +1,7 @@
+CREATE TABLE ${surveyId}${mainTableExtension}(
+	invitee int(6) not null, 
+	status varchar(64),
+	${otherColumns}
+	PRIMARY KEY (invitee),
+	FOREIGN KEY (invitee) REFERENCES invitee(id) ON DELETE CASCADE
+	)

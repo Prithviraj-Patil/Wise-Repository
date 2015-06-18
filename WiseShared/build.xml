@@ -1,0 +1,82 @@
+<?xml version="1.0" ?> 
+<!DOCTYPE project>
+<project name="WiseShared" default="jar">
+
+    <property file="build.${os.name}.properties" />
+    <property file="build.properties" />
+	
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="dist.dir" value="${basedir}/dist" />
+    <property name="src.dir" value="${basedir}/src" />
+    <property name="bin.dir" value="${build.dir}/classes" />
+	
+    <property name="compile.debug" value="true" />
+    <property name="compile.deprecation" value="false" />
+    <property name="compile.source" value="1.7" />
+    <property name="compile.target" value="1.7" />
+    <property name="compile.optimize" value="true" />
+	
+	<path id="compile.classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+        <fileset dir="${tomcat.home}/lib">
+                <include name="**/servlet-api.jar" />
+        </fileset>
+        <pathelement location="${bin.dir}" />
+	</path>
+	
+    <target name="prepare" depends="clean">
+            <!-- Create build directories as needed -->
+            <mkdir dir="${dist.dir}" />
+            <mkdir dir="${bin.dir}" />
+    </target>
+	
+	<target name="compile" depends="prepare" >
+        <!-- Compile Java classes as necessary -->
+        <javac srcdir="${src.dir}" 
+                   destdir="${bin.dir}" 
+                   debug="${compile.debug}" 
+                   deprecation="${compile.deprecation}" 
+           source="${compile.source}"
+           target="${compile.target}"
+                   optimize="${compile.optimize}"
+                includeantruntime="false">
+                <classpath refid="compile.classpath" />
+        </javac>
+        <copy todir="${bin.dir}">
+                <fileset dir="${src.dir}">
+                        <include name="**/*.properties" />
+                </fileset>
+        </copy>
+	</target>
+	
+	<target name="war" depends="compile">
+		<war destfile="dist/WiseShared.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<fileset dir=".">
+			    <include name="**/SqlScripts/**"/>
+			</fileset>
+			<lib dir="WebContent/WEB-INF/lib"/>
+			<classes dir="build/classes" />
+		</war>
+	</target>
+	
+	<target name="jar" depends="compile">
+	        <jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="build/classes">
+                <fileset dir="${bin.dir}" excludes="**/Test.class" />
+                <fileset dir="${src.dir}" includes="META-INF/**" />
+                <fileset dir="${build.dir}" includes="${ant.project.name}_git.txt" />
+	        </jar>
+	</target>
+	
+	<target name="clean">
+		<delete includeemptydirs="true">
+		    <fileset dir="${build.dir}" includes="**/*"/>
+		</delete>
+		<delete includeemptydirs="true">
+		    <fileset dir="${build.dir}" includes="**/*"/>
+		</delete>
+	</target>
+	
+</project>

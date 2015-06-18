@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Preface.xsl"?>
+<Preface Project_Name="wisedev" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WisePreface_v1.2.xsd">
+	<Message_Sequence ID="Main_seq" Survey_ID="wisedev" From_Email="ctsidevelopment@gmail.com" From_String="Test Survey" Reply_Email="ctsidevelopment@gmail.com" Reply_String="Test Survey">
+		<Initial_Invitation ID="invite" Subject="UCLA WISE Test Survey -- win a free iPad (Not really, just testing!)">
+			<p>First Paragraph</p>
+			<p>Second Paragraph</p>
+			<p>Third Paragraph</p>
+			<p link="begin">To begin the survey, please go to the following link:</p>
+			<link/>
+			<p>Closing Paragraph</p>
+			<s>Sincerely,</s>
+			<s>John Smith</s>
+			<s>Title of John Smith </s>
+			<s>Department of John Smith </s>
+			<s>Additional details for John Smith</s>
+		</Initial_Invitation>
+		<Start_Reminder ID="start_reminder_1" Subject="Reminder -- UCLA WISE Test Survey -- win a free iPad (Not really, just testing!)" Trigger_Days="8" Max_Count="1">
+			<p>Paragraph 1</p>
+			<p>To begin, please go to the following link:</p>
+			<link/>
+			<p>If you don't wish to participate, you can use the following Web address to decline participation now. Using this link will prevent us from contacting you again about this survey:</p>
+			<declineLink/>
+			<p>Paragraph 2 </p>
+			<p>Closing Paragraph</p>
+			<s>Sincerely,</s>
+			<s>John Smith</s>
+			<s>Title of John Smith </s>
+			<s>Department of John Smith </s>
+			<s>Additional details for John Smith</s>
+		</Start_Reminder>
+		<Interrupt ID="interrupt1" Subject="UCLA WISE Test Survey -- Survey interrupted">
+			<p>Thank you for starting the UCLA WISE Test Survey. This message is a reminder that you were interrupted before completing the survey. You are still eligible to win an iPad.</p>
+			<p>Please resume the survey at your earliest opportunity by clicking on the Web address below:</p>
+			<link/>
+			<p>This is a test message. </p>
+			<p>
+Thank you very much for your assistance with this important matter and your continued involvement in the UCLA WISE Test Survey. Your input is very valuable for our continued success.</p>
+			<s>Sincerely,</s>
+			<s>John Smith</s>
+			<s>Title of John Smith </s>
+			<s>Department of John Smith </s>
+			<s>Additional details for John Smith</s>
+		</Interrupt>
+		<Completion_Reminder ID="completion_reminder_1" Subject="UCLA WISE Test Survey -- Survey interrupted" Trigger_Days="6" Max_Count="3">
+			<p>Thank you for starting the UCLA WISE Test Survey. This message is a reminder that you were interrupted before completing the survey. You are still eligible to win an iPad.</p>
+			<p>Please resume the survey at your earliest opportunity by clicking on the Web address below:</p>
+			<link/>
+			<p>This is a test message </p>
+			<p>
+Thank you very much for your assistance with this important matter and your continued involvement in the UCLA WISE Test Survey. Your input is very valuable for our continued success.</p>
+			<s>Sincerely,</s>
+			<s>John Smith</s>
+			<s>Title of John Smith </s>
+			<s>Department of John Smith </s>
+			<s>Additional details for John Smith</s>
+		</Completion_Reminder>
+		<Message ID="final_invitation" Subject="UCLA WISE Test Survey -- Final invitation">
+			<p>Paragraph 1 </p>
+			<p>Paragraph 2</p>
+			<p>To begin, please go to the following link:</p>
+			<link/>
+			<p>Paragraph 3 </p>
+			<p>
+Thank you very much for your assistance with this important matter and your continued involvement in the UCLA WISE Test Survey. Your input is very valuable for our continued success.</p>
+			<s>Sincerely,</s>
+			<s>John Smith</s>
+			<s>Title of John Smith </s>
+			<s>Department of John Smith </s>
+			<s>Additional details for John Smith</s>
+		</Message>
+	</Message_Sequence>
+	<Welcome_Page ID="w1" Survey_ID="wisedev" LogoFileName="blankPixel.gif" BannerFileName="title.gif" Title="UCLA WISE Test Survey -- win a free iPad">
+		<p>
+			<span class="keyWords">UCLA WISE Test Survey</span>
+		</p>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2 </p>
+		<p>Please provide us with the most accurate information possible.  We may follow-up for more information. </p>
+		<p>Thanks so much for your responses.  </p>
+	</Welcome_Page>
+	<ThankYou_Page ID="thx" Survey_ID="wisedev" LogoFileName="blankPixel.gif" BannerFileName="title.gif" Title="Thank You">
+		<p>Thank you so much for completing the UCLA WISE Test Survey.</p>
+		<p>If you have any questions or comments regarding this survey, please contact one of the developers. </p>
+	</ThankYou_Page>
+</Preface>

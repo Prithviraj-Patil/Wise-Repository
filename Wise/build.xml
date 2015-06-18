@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="WISE" default="war">
+	<property file="build.${os.name}.properties" />
+	<property file="build.properties" />
+		
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="dist.dir" value="${basedir}/dist" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="bin.dir" value="${build.dir}/classes" />
+	
+	<property name="test.src.dir" value="${basedir}/test" />
+	<property name="test.bin.dir" value="${build.dir}/test_classes"/>
+	<property name="test.reports" value="${build.dir}/reports"/>
+		
+	<property name="compile.debug" value="true" />
+	<property name="compile.deprecation" value="false" />
+	<property name="compile.source" value="1.7" />
+	<property name="compile.target" value="1.7" />
+	<property name="compile.optimize" value="true" />
+	
+	<property name="conf_dir" value="conf" />
+	<property name="shared.dir" value="../WiseShared"/>
+	
+	<path id="compile.classpath">
+		<fileset dir="${shared.dir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${shared.dir}/lib/junit">
+					<include name="**/*.jar"/>
+				</fileset>
+		<fileset dir="${shared.dir}/dist">
+			<include name="**/*.jar"/>
+		</fileset>
+        <fileset dir="${tomcat.home}/lib">
+                <include name="**/servlet-api.jar" />
+        </fileset>
+        <pathelement location="${bin.dir}" />
+	</path>
+
+	<path id="run.classpath">
+		<path refid="compile.classpath" />
+		<pathelement location="${test.bin.dir}" />
+	</path>
+	
+    <target name="prepare">
+            <!-- Create build directories as needed -->
+            <mkdir dir="${dist.dir}" />
+            <mkdir dir="${bin.dir}" />
+    		<mkdir  dir="${test.bin.dir}"/>
+    		<mkdir  dir="${test.reports}/junit"/>
+    		<mkdir  dir="${test.reports}/xml"/>
+    </target>
+	
+	<target name="compile" depends="prepare" >
+        <!-- Compile Java classes as necessary -->
+        <javac srcdir="${src.dir}" 
+                   destdir="${bin.dir}" 
+                   debug="${compile.debug}" 
+                   deprecation="${compile.deprecation}" 
+           source="${compile.source}"
+           target="${compile.target}"
+                   optimize="${compile.optimize}"
+                includeantruntime="false">
+                <classpath refid="compile.classpath" />
+        </javac>
+        <copy todir="${bin.dir}">
+                <fileset dir="${src.dir}">
+                        <include name="**/*.properties" />
+                </fileset>
+        </copy>
+	</target>
+	
+	<target name="jar" depends="compile">
+	        <jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="build/classes">
+                <fileset dir="${bin.dir}" excludes="**/Test.class" />
+                <fileset dir="${src.dir}" includes="META-INF/**" />
+                <fileset dir="${build.dir}" includes="${ant.project.name}_git.txt" />
+	        </jar>
+	</target>
+	
+	<target name="war" depends="clean,jar">
+		<war destfile="dist/WISE.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<lib dir="WebContent/WEB-INF/lib"/>
+			<lib dir="${dist.dir}">
+				<include name="${ant.project.name}.jar" />
+			</lib>
+			<lib dir="${shared.dir}/lib">
+				<include name="*guava*.jar"/>
+				<include name="*common-lang3*.jar"/>
+				<include name="*commons-fileupload*.jar"/>
+				<include name="*cos*.jar"/>
+				<include name="*freemarker*.jar"/>
+				<include name="*gson*.jar"/>
+				<include name="*jasypt*.jar"/>
+				<include name="*log4j*.jar"/>
+				<include name="*mail*.jar"/>
+				<include name="*mysql-connector-java*.jar"/>
+			</lib>
+			<lib dir="${shared.dir}/lib/apache">
+				<include name="*commons-io*.jar"/>
+			</lib>
+			<lib dir="${shared.dir}/lib/hibernate/required">
+				<include name="*.jar"/>
+			</lib>
+			<lib dir="${shared.dir}/dist">
+				<include name="*.jar"/>
+			</lib>
+			<classes dir ="${conf_dir}">
+				<include name="log4j.properties" />
+			</classes>
+		</war>
+	</target>
+		
+	<target name="clean">
+		<delete includeemptydirs="true">
+		    <fileset dir="build" includes="**/*"/>
+		</delete>
+		<delete includeemptydirs="true">
+		    <fileset dir="dist" includes="**/*"/>
+		</delete>
+	</target>
+		
+	<target name="test_setup" depends="jar">
+		<javac srcdir="${test.src.dir}"
+			   destdir="${test.bin.dir}"
+		       debug="${compile.debug}"
+		       deprecation="${compile.deprecation}"
+		       source="${compile.source}"
+			   target="${compile.target}"
+			   optimize="${compile.optimize}"
+			   includeantruntime="false">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+	<target name="test_junit">
+		<antcall target="test">
+			<param name="reports_dir" value="${test.reports}"/>
+			<param name="bin_dir" value= "${test.bin.dir}" />
+		</antcall>
+	</target>
+	<target name="test" depends="test_setup">
+		<junit printsummary="yes" showoutput="no" filtertrace="no" haltonfailure="no"
+				failureProperty="test.failure"
+				fork="yes" forkmode="perTest"
+				timeout="30000"
+				dir="${basedir}">
+
+			<classpath refid="run.classpath" />
+			<jvmarg value="-XX:-UseSplitVerifier"/>
+			<formatter type="plain" usefile="true" />
+			<formatter type="xml" />
+				<batchtest todir="${reports_dir}/xml">
+					<fileset dir="${bin_dir}">
+						<include name="**/*Test*.class"/>
+						<exclude name="**/*$*.class"/>
+						<exclude name="**/Abstract*.class"/>
+					</fileset>
+				</batchtest>
+		</junit>
+
+		<junitreport todir="${test.reports}/xml">
+			<fileset dir="${test.reports}/xml">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${test.reports}/junit" />
+		</junitreport>
+
+		<fail if="test.failure"/>
+	</target>
+</project>

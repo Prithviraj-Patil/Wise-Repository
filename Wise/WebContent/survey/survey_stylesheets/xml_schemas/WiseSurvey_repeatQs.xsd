@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Douglas S Bell (private) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Douglas S Bell (private) -->
+<!-- edited with STYLEVISION v5 rel. 3 U (http://www.xmlspy.com) by Douglas Bell (Div of GIM, Geffen School of Med, UCLA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Survey">
+		<xs:annotation>
+			<xs:documentation>The root element. It contains a sequence of pages which in turn contain a sequence of items. The ID attribute identifies the survey uniquely with a WISE study space. Version attribute is for the author's tracking; not used by WISE.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Survey_Page" type="ItemSet" maxOccurs="unbounded"/>
+				<xs:element ref="Response_Set" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Subject_Set" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Use_Invitee_Fields" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Inform WISE of fields that need retrieval from invitee table to evaluate Conditions (or later for FILL_IN text)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Field_Name" type="xs:ID"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Translation" type="TranslationType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Invitee_Fields" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="p">
+								<xs:annotation>
+									<xs:documentation>Paragraph to be displayed at the top of the data entry form for anonymous users</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="salutation" type="inviteeFieldType"/>
+							<xs:element name="firstname" type="baseFieldType"/>
+							<xs:element name="lastname" type="baseFieldType"/>
+							<xs:element name="email" type="baseFieldType"/>
+							<xs:element name="irb_id" type="inviteeFieldType" minOccurs="0"/>
+							<xs:element name="phone" type="inviteeFieldType" minOccurs="0"/>
+							<xs:element name="textField" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>List additional invitee fields other than the standard ones above.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="inviteeFieldType">
+											<xs:attribute name="columnName" type="xs:ID" use="required"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ID" type="xs:ID" use="required"/>
+			<xs:attribute name="Title" type="xs:string" use="required"/>
+			<xs:attribute name="Version" type="xs:string" use="optional"/>
+			<xs:attribute name="Project_Name" type="xs:string" use="required"/>
+			<xs:attribute name="From_String" type="xs:string" use="optional"/>
+			<xs:attribute name="From_Email" type="xs:string" use="optional"/>
+			<xs:attribute name="Interrupt_Msg" type="xs:string" use="optional"/>
+			<xs:attribute name="Done_Msg" type="xs:string" use="optional"/>
+			<xs:attribute name="Allow_Goback" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Review_Msg" type="xs:string" use="optional"/>
+			<xs:attribute name="View_Result_After_N" type="xs:int" use="optional"/>
+			<xs:attribute name="Forward_On" type="xs:string" use="optional"/>
+			<xs:attribute name="Edu_Module" type="xs:string" use="optional"/>
+			<xs:attribute name="Logo_Name" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Open_Question">
+		<xs:annotation>
+			<xs:documentation>Question with an open-ended response, either text (with size constraints) or numeric (with range constraints)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+				<xs:element name="Stem">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Styled_Content"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="Numeric_Open_Response">
+						<xs:complexType>
+							<xs:attribute name="MaxSize" type="xs:integer" use="required"/>
+							<xs:attribute name="Width" type="xs:integer" use="optional"/>
+							<xs:attribute name="MinValue" type="xs:integer" use="required"/>
+							<xs:attribute name="MaxValue" type="xs:integer" use="required"/>
+							<xs:attribute name="DecimalPlaces" type="xs:integer" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Text_Open_Response">
+						<xs:complexType>
+							<xs:attribute name="MaxSize" type="xs:integer" use="required"/>
+							<xs:attribute name="MultiLine" type="xs:boolean" use="required"/>
+							<xs:attribute name="Width" type="xs:integer" use="optional"/>
+							<xs:attribute name="Height" type="xs:integer" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:ID" use="required"/>
+			<xs:attribute name="requiredField" type="xs:boolean" use="optional"/>
+			<xs:attribute name="oneLine" type="xs:boolean" use="optional"/>
+			<xs:attribute name="Translation" type="xs:IDREF" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Closed_Question">
+		<xs:annotation>
+			<xs:documentation>Question with a closed set of responses, allowing selection of either one (single) or more than one (multiple) response options. Note RCardinality is deprecated.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+				<xs:element name="Stem">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Styled_Content"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:element ref="Response_Set"/>
+					<xs:element name="Response_Set_Ref">
+						<xs:complexType>
+							<xs:attribute name="Response_Set" type="xs:IDREF" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+				<xs:element name="SkipList" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Target" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Value" type="xs:integer" use="required"/>
+									<xs:attribute name="Page" type="xs:IDREF" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:ID" use="required"/>
+			<xs:attribute name="responseType" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Exclusive"/>
+						<xs:enumeration value="MultiSelect"/>
+						<xs:enumeration value="single"/>
+						<xs:enumeration value="multiple"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="RCardinality" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Exclusive"/>
+						<xs:enumeration value="MultiSelect"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="oneLine" type="xs:boolean" use="optional"/>
+			<xs:attribute name="requiredField" type="xs:boolean" use="optional"/>
+			<xs:attribute name="notes" type="xs:string" use="optional"/>
+			<xs:attribute name="Translation" type="xs:IDREF" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Question_Block">
+		<xs:annotation>
+			<xs:documentation>Item with multiple closed-ended sub-questions, each sharing the same response set, presented in a table</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+				<xs:element name="Stem" minOccurs="0">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Styled_Content"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:element ref="Response_Set"/>
+					<xs:element name="Response_Set_Ref">
+						<xs:complexType>
+							<xs:attribute name="Response_Set" type="xs:IDREF" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+				<xs:choice>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="Sub_Head">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="Styled_Content">
+										<xs:attribute name="name" type="xs:ID" use="optional"/>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Sub_Stem">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="Styled_Content">
+										<xs:attribute name="name" type="xs:ID" use="optional"/>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:element name="Subject_Set_Ref">
+						<xs:annotation>
+							<xs:documentation>A group of named subjects for which the question should be repeated</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence minOccurs="0">
+								<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+							</xs:sequence>
+							<xs:attribute name="Subject_Set" type="xs:IDREF" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:ID" use="required"/>
+			<xs:attribute name="Translation" type="xs:IDREF" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Directive">
+		<xs:annotation>
+			<xs:documentation>Displays instructions for the survey subject as formatted text on the page. Note: Precondition must come at end of content (because Directive is an extension of Styled_Content.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="Styled_Content">
+					<xs:sequence minOccurs="0">
+						<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="Translation" type="xs:IDREF" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response_Set">
+		<xs:annotation>
+			<xs:documentation>Set of possible answers for a Closed_Question or Question_Block; can be shared among multiple items</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response_Option" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="correct" type="xs:boolean" use="optional"/>
+								<xs:attribute name="value" type="xs:integer" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ID" type="xs:ID" use="required"/>
+			<xs:attribute name="Levels" type="xs:integer" use="optional"/>
+			<xs:attribute name="StartValue" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Subject_Set">
+		<xs:annotation>
+			<xs:documentation>A set of numbered Subject labels for which a several questions are to be repeated. E.g. if students are surveyed about a group of professors, the professors can be numbered and represented in a Subject_Set. This allows better representation of repeating data and the use of preconditions to control follow-up questions. Used only in Question_Blocks and Survey_Pages</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Subject" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="IDnum" type="xs:integer" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ID" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ItemSet">
+		<xs:annotation>
+			<xs:documentation>Abstraction for item collections -- Page or repeating set. Probably drop the FinalPage and nextPage attributes... </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+			<xs:element name="Subject_Set_Ref" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A group of named subjects for which the page should be repeated. Implementation pending</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence minOccurs="0">
+						<xs:element name="Precondition" type="Predicate" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="Subject_Set" type="xs:IDREF" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Open_Question"/>
+				<xs:element ref="Closed_Question"/>
+				<xs:element ref="Question_Block"/>
+				<xs:element ref="Directive"/>
+				<xs:element name="Repeating_Item_Set" type="ItemSet">
+					<xs:annotation>
+						<xs:documentation>Set of items that can repeat an indeterminate number of times. The ID attribute is used to name a separate data table that holds response values. Each row in this table represents a repeat of the item set with an ID assigned by the system and a title (required field) in addition to a column for each item in the set. The Title attribute of the Repeating_Item_Set is used as the label for adding a new instance (i.e. “Add [Title]”).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:ID" use="required"/>
+		<xs:attribute name="Title" type="xs:string" use="required"/>
+		<xs:attribute name="Instructions" type="xs:string" use="optional"/>
+		<xs:attribute name="finalPage" type="xs:boolean" use="optional"/>
+		<xs:attribute name="nextPage" type="xs:IDREF" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="Predicate">
+		<xs:annotation>
+			<xs:documentation>Represents nested boolean logic; values are bound at runtime from data available so far for the subject. Used in Preconditions to determine when an item or page should be displayed RuleSets for forward-chaining pages</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="field" type="xs:IDREF">
+					<xs:annotation>
+						<xs:documentation>References a value to be retrieved for comparison.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="eq"/>
+					<xs:element name="neq"/>
+					<xs:element name="lt"/>
+					<xs:element name="gt"/>
+					<xs:element name="leq"/>
+					<xs:element name="geq"/>
+				</xs:choice>
+				<xs:choice>
+					<xs:element name="cn" type="xs:decimal">
+						<xs:annotation>
+							<xs:documentation>Contains a decimal constant. (Element name comes from MathML.)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="field" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>References a value to be retrieved for comparison.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="apply" type="Predicate">
+					<xs:annotation>
+						<xs:documentation>Contains a nested predicate. (Element name comes from MathML.)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="and"/>
+					<xs:element name="or"/>
+				</xs:choice>
+				<xs:element name="apply" type="Predicate"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Styled_Content" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Permits span and script tags within stems, directives, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="span">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="class" type="xs:string" use="optional"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="script">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="TranslationType">
+		<xs:annotation>
+			<xs:documentation>This type is experimental; "under contrstuction."</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="Stem" type="xs:string" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element name="Response_Option" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="correct" type="xs:boolean" use="optional"/>
+								<xs:attribute name="value" type="xs:integer" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice minOccurs="0">
+				<xs:element name="Sub_Stem" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Subject" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="Directive" type="xs:string" minOccurs="0"/>
+		</xs:choice>
+		<xs:attribute name="ID" type="xs:ID" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="charset" type="xs:string" use="required"/>
+		<xs:attribute name="selector" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="inviteeFieldType">
+		<xs:annotation>
+			<xs:documentation>Used for representing invitee fields that may need to be filled out our accessed</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="baseFieldType">
+				<xs:sequence>
+					<xs:element name="values" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="value" maxOccurs="unbounded">
+									<xs:complexType mixed="true">
+										<xs:attribute name="desc"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="baseFieldType">
+		<xs:annotation>
+			<xs:documentation>Base type for invitee fields, representing labels that should be displayed to anonymous users</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="label" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

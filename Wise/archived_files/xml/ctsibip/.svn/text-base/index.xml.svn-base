@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<body>
+	<logoImage>ctsibip/w1_logo.jpg</logoImage>
+	<titleImage>ctsibip/title.gif</titleImage>
+	<desc>Welcome to the UCLA CTSI online survey creator. In order to enter
+		this site, you will need a URL that was sent to your email.
+	</desc>
+	<hlink>Back to UCLA CTSI Homepage
+	</hlink>
+	<link>http://www.ctsi.ucla.edu/</link>
+</body>

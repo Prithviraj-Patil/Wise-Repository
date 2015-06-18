@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Web-based Interactive Survey Environment (WISE) : Decline Thanks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script language="javascript">
+var locate = document.location;
+var review_arg = "";
+str=locate.toString();
+if(str.indexOf("?")!=-1)
+{
+	review_arg=str.substring(str.indexOf("=")+1, str.length);
+
+}
+</script>
+</head>
+<body bgcolor="#FFFFCC" text="#000000">
+<table width="100%" cellspacing=1 cellpadding=9 align=left border="0">
+  <tr>
+    <td width="20%" align="center" valign="top"> <img src="images/somlogo.gif" align="right" width="75" height="75"></td>
+	<td width="540" align="center" valign="middle"> <img src="images/title.gif" align="middle" width="400" height="50">
+    </td>
+  </tr>
+    <tr>
+	<td width="20%" rowspan=90>&nbsp;</td>
+    <td width="540" align="center" colspan="1"> <img src="images/survey.gif" width="100" height="30">
+    </td>
+  </tr>
+  <tr>
+    <td width="540" align=left colspan="1">
+	<div style="margin-left: 6em">
+	Thank you for completing the survey.
+
+	<script>
+	if(review_arg !=null)
+	{
+	  if(review_arg =="false")
+		{document.write("<p>Please watch your email, when enough people have completed the survey, you will receive an invitation to review the survey results.")}
+	  else if(review_arg != "")
+		{document.write("<p>You could now review the results of the survey. Please click the link to <a href='http://cme.arc2.ucla.edu/wise_product/servlet/"+review_arg+"'>review the survey results.</a>")}
+	}
+	</script>
+    </div>
+	</td>
+  </tr>
+  <tr>
+	 <td width="540" align=left colspan="1">
+	 <div style="margin-left: 6em">
+	  If you have questions about this study, please email
+		<a href="mailto:dbell@mednet.ucla.edu">Douglas Bell, MD, PhD</a>
+		or click the button below to close this window.
+	  </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="540" align=center colspan="1"> <a href="javascript:window.close()">
+      <img src="images/close.gif" border=0 width="54" height="23"></a> </td>
+  </tr>
+</table>
+</body>
+</html>

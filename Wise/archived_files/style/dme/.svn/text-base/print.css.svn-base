@@ -1,0 +1,19 @@
+/* default styles */
+
+td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal }
+
+/* styles used for survey questions */
+
+.keyWords { FONT-WEIGHT: bold }
+.keyPhrase { FONT-WEIGHT: bold; FONT-STYLE: italic }
+.definition { FONT-SIZE: 8pt; FONT-STYLE: italic; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.preserve { white-space: pre }
+.subQ { font-size: 8pt }
+.keyTitle { FONT-WEIGHT: bold; FONT-SIZE: 8pt }
+
+/* styles used for the link of print version */
+
+a:hover { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #aa0000; text-decoration: underline}
+a:link { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; text-decoration: none}
+a:visited { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; text-decoration: none}
+

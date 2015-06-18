@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by Douglas Bell
+		(UCLA School of Medicine)
+	-->
+<WISE_Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="E:\wise2\xml\wise_config.xsd">
+	<Study ID="3" Location="ptop" Machine="http://localhost:8080ser="ptop" DB_Password="qisurvey1" Title="UCLA Specialists' Evaluation of PCPs"
+		DB_Data="ptop_data" />
+	<Study ID="4" Location="drew" Machine="http://localhost:8080localhost:8080" DB_Password="ndstry" Title="DREW RCMI Surveys" DB_Data="rcmi_tech" />
+	<Study ID="5" Location="demo" Machine="http://localhost:8080"
+		DB_Ulocalhost:8080word="wisedemo1" Title="DREW RCMI Surveys"
+		DB_Data="demo_db" />
+	<Study ID="6" Location="dmr" Machine="http://localhost:8080"
+		DB_User="dmr"localhost:8080in14" Title="DMR Surveys" DB_Data="dmr_data" />
+	<Study ID="7" Location="prostate" Machine="http://localhost:8080"
+		DB_User="prostate" DB_localhost:8080ate" Title="Prosate Surveys"
+		DB_Data="prostate_eval" />
+	<Study ID="8" Location="sgim" Machine="http://localhost:8080"
+		DB_User="sgim" DB_Password="mntlocalhost:8080M Survey" DB_Data="sgim_data" />
+	<Study ID="9" Location="workload" Machine="http://localhost:8080"
+		DB_User="workload" DB_Password="chfdm" Tlocalhost:8080vey"
+		DB_Data="workload_data" />
+	<Study ID="10" Location="alert" Machine="http://localhost:8080"
+		DB_User="alert" DB_Password="beer" Title="Alert Slocalhost:8080ert_data" />
+	<Study ID="11" Location="wise_test" Machine="http://localhost:8080"
+		DB_User="wise_test" DB_Password="password" Title="WISE Survey Testbed"
+		DB_Data="wise_test_data" />
+</WISE_Config>

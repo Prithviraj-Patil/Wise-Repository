@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Rsrc-Class-Path: ./ cos_2.jar mail_2.jar mysql-connector-java-3.1.12-b
+ in_2.jar mail.jar annotations-api.jar log4j-1.2.15_2.jar jsp-api.jar 
+ jsp-api_2.jar commons-dbcp-1.2.1.jar jasper.jar log4j-1.2.15.jar el-a
+ pi.jar catalina.jar servlet-api.jar jasper-el.jar mysql-connector-jav
+ a-3.1.12-bin.jar activation.jar commons-dbcp-1.2.1_2.jar activation_2
+ .jar cos.jar
+Class-Path: .
+Rsrc-Main-Class: edu.ucla.wise.commons.EmailScheduler
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+

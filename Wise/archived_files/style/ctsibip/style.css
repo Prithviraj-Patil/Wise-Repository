@@ -1,0 +1,203 @@
+BODY {
+	COLOR: #FFFFCC; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TABLE {
+	FONT-SIZE: 11px
+}
+TR {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TD {
+	border-color: #000000; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.Stem {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.head {
+	FONT-WEIGHT: bold; FONT-SIZE: 14pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; color: navy; text-align: center; 
+}
+.head-error {
+	FONT-WEIGHT: bold; FONT-SIZE: 14pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; color: red; text-align: center; 
+}
+.shaded-bg {
+	background-color: #f0f0ff; 
+}
+.unshaded-bg {
+	background-color: #ffffff;
+}
+.header-row {
+	background-color: #ffffff;
+}
+.LO {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+; font-style: italic; text-decoration: underline
+}
+
+.step {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: italic; text-decoration: underline
+}
+
+.instruct {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.Response_Option {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.Explanation {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.incorrect_message {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.correct_message {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.Confidence {
+	FONT-SIZE: 8pt; COLOR: #ff0000
+}
+.heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.normal {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.module {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; TEXT-TRANSFORM: uppercase; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.moduleTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14pt; TEXT-TRANSFORM: capitalize; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+; background-position: center center
+}
+
+.topic {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: italic; MARGIN-TOP: 10px;
+}
+.resume {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: normal;
+}
+.objective {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; font-style: normal; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: none
+}
+
+.overview_topic {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: italic; MARGIN-TOP: 10px;
+}
+.overview_note {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: normal;
+}
+.overview_objective {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; font-style: normal; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: none
+}
+
+.assess_topic {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-style: italic; MARGIN-TOP: 10px;
+}
+.assess_objective {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; font-style: normal; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline; text-align: right
+}
+
+
+.instructions {
+	FONT-WEIGHT: normal; FONT-SIZE: 7pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+
+.question {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.reference {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.small {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.smallbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+UL {
+	MARGIN: 3px 3px 3px 25px
+}
+BLOCKQUOTE {
+	MARGIN-LEFT: 15px; MARGIN-RIGHT: 15px
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.underscore {
+	TEXT-DECORATION: underline
+}
+.hanging_option {
+	MARGIN: 0px 1px 0px 20px; TEXT-INDENT: -15px
+}
+.moderate_tight {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.maybe_obvious {
+	FONT-WEIGHT: bold; FONT-SIZE: 7pt; COLOR: #667066
+}
+.tth {
+	BORDER-LEFT-COLOR: #6699cc; BORDER-BOTTOM-COLOR: #6699cc; BORDER-TOP-COLOR: #6699cc; BORDER-RIGHT-COLOR: #6699cc
+}
+.sfon {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+
+A.hover_link:link    {color:#000000; text-decoration:none;}
+A.hover_link:visited {color:#000000; text-decoration:none;}
+A.hover_link:active  {color:#000000; text-decoration:none;}
+A.hover_link:hover   {BACKGROUND-COLOR:#00EE77; text-decoration:none;}
+
+
+
+
+.heading { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold}
+.bold { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold }
+.normal { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: normal }
+.tableHeader { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold ; color: #333333}
+.module { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 7pt; font-weight: bold ; text-transform: uppercase; color: #666666}
+.topic { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold }
+.objective { font-size: 9pt; font-weight: normal ; width: 300px; padding-right: 25px; padding-left: 15px }
+.question { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal }
+.reference { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal }
+.small { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: normal }
+.smallbold { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold }
+
+
+ul {  margin-top: 3px; margin-left: 25px; margin-right: 3px; margin-bottom: 3px}
+blockquote {  margin-right: 15px; margin-left: 15px}
+td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: normal }
+
+.underscore {  text-decoration: underline}
+.hanging_option { text-indent: -15px; margin-left: 20px; margin-right: 1px; margin-top: 0px; margin-bottom: 0px; margin-top: 0px}
+.moderate_tight {  margin-top: 0px; margin-bottom: 0px}
+.maybe_obvious {  font-weight: bold; color: #667066; font-size: 7pt}
+
+.tth {
+	border-color: #CC9933;
+}
+.sfon{
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #996633;
+}
+.spt {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #6699CC;
+}
+
+.keyWords { FONT-WEIGHT: bold }
+.keyPhrase { FONT-WEIGHT: bold; FONT-STYLE: italic }
+.definition { FONT-SIZE: 11pt; FONT-STYLE: italic; FONT-FAMILY: Arial, Helvetica, sans-serif }
+.preserve { white-space: pre }
+.subQ { font-size: 8pt }
+.keyTitle { FONT-WEIGHT: bold; FONT-SIZE: 12pt }
+.stembold { FONT-WEIGHT: bold; FONT-SIZE: 9pt }
+.itemID { text-align: right; margin-bottom: 1px; margin-top: 2px; font-family: Arial, Helvetica, sans-serif; font-size: 5pt;font-style:italic }

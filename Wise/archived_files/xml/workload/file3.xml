@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Bell Lab
+		(UCLA Geffen School of Medicine)
+	-->
+	<!--
+		edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by Douglas Bell
+		(Douglas S. Bell)
+	-->
+<Survey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://gim.med.ucla.edu/Style/survey.xsd"
+	ID="S2" Title="UCLA Prostate Cancer Screening Education Study" Version="1"
+	From_String="Douglas Bell, MD, PhD" From_Email="dbell@mednet.ucla.edu"
+	Interrupt_Msg="interrupt1" Done_Msg="thx1">
+	<Survey_Page ID="page_1" Title="CONTACT INFORMATION, PAGE 1">
+		<Directive>Please enter or correct your contact information
+			below.</Directive>
+		<Open_Question Name="salutation" requiredField="false">
+			<Stem>How would you like to be addressed?</Stem>
+			<Text_Open_Response MaxSize="4" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="firstname" requiredField="true">
+			<Stem>First name:</Stem>
+			<Text_Open_Response MaxSize="40" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="lastname" requiredField="true">
+			<Stem>Last name:</Stem>
+			<Text_Open_Response MaxSize="40" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="address" requiredField="false">
+			<Stem>Mailing address:</Stem>
+			<Text_Open_Response MaxSize="80" Width="40"
+				MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="city" requiredField="false">
+			<Stem>City:</Stem>
+			<Text_Open_Response MaxSize="40" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="state" requiredField="true">
+			<Stem>State:</Stem>
+			<Text_Open_Response MaxSize="2" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="zip" requiredField="true">
+			<Stem>Zip code:</Stem>
+			<Numeric_Open_Response MaxSize="5" MinValue="90000"
+				MaxValue="100000" />
+		</Open_Question>
+		<Open_Question Name="phone" requiredField="false">
+			<Stem>Phone number (format xxx-xxx-xxxx):</Stem>
+			<Text_Open_Response MaxSize="12" MultiLine="false" />
+		</Open_Question>
+		<Open_Question Name="email" requiredField="true">
+			<Stem>Your email address</Stem>
+			<Text_Open_Response MaxSize="40" MultiLine="false" />
+		</Open_Question>
+	</Survey_Page>
+	<Survey_Page ID="page_2" Title="WORK ENVIRONMENT, PAGE 2">
+		<Closed_Question Name="work_setting" RCardinality="Exclusive">
+			<Stem>What is your primary work setting?</Stem>
+			<Response_Set ID="list_setting">
+				<Response_Option>Solo practice</Response_Option>
+				<Response_Option>Small group practice (2-7 doctors)</Response_Option>
+				<Response_Option>Large group practice (>7 doctors)</Response_Option>
+				<Response_Option>Other organization (university, VA, HMO, hospital, etc.)</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="training_affiliation"
+			RCardinality="Exclusive">
+			<Stem>Do you currently have any affiliation with a medical school,
+				residency, or fellowship training program?</Stem>
+			<Response_Set_Ref Response_Set="yes_no" />
+		</Closed_Question>
+		<Closed_Question Name="training_completed"
+			RCardinality="MultiSelect">
+			<Stem>In which of the following specialties have you completed
+				training? (check all that apply)</Stem>
+			<Response_Set ID="list_training">
+				<Response_Option>Family Medicine</Response_Option>
+				<Response_Option>Internal Medicine</Response_Option>
+				<Response_Option>Other Primary Care</Response_Option>
+				<Response_Option>Oncology</Response_Option>
+				<Response_Option>Other Medical Specialty</Response_Option>
+				<Response_Option>Urology</Response_Option>
+				<Response_Option>Surgical Oncology</Response_Option>
+				<Response_Option>Other Surgical Specialty</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+	</Survey_Page>
+	<Survey_Page ID="page_3" Title="DEMOGRAPHICS, PAGE 3">
+		<Closed_Question Name="race" RCardinality="MultiSelect">
+			<Stem>Do you consider yourself to be ... ? (check all that apply)
+			</Stem>
+			<Response_Set ID="list_raceeth">
+				<Response_Option>American Indian or Alaska Native</Response_Option>
+				<Response_Option>Asian</Response_Option>
+				<Response_Option>Black or African American</Response_Option>
+				<Response_Option>Hispanic or Latino</Response_Option>
+				<Response_Option>Native Hawaiian or Other Pacific Islander</Response_Option>
+				<Response_Option>White</Response_Option>
+				<Response_Option>Other</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="birth_year">
+			<Stem>What year were you born? 19__</Stem>
+			<Numeric_Open_Response MaxSize="2" MinValue="10"
+				MaxValue="85" />
+		</Open_Question>
+		<Closed_Question Name="gender" RCardinality="Exclusive">
+			<Stem>What is your gender?</Stem>
+			<Response_Set ID="list_gender">
+				<Response_Option>Male</Response_Option>
+				<Response_Option>Female</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="PSA_screening" RCardinality="Exclusive">
+			<Stem>If male, have you undergone prostate cancer screening with a
+				PSA test?</Stem>
+			<Response_Set_Ref Response_Set="yes_no" />
+		</Closed_Question>
+		<Closed_Question Name="DRE_screening" RCardinality="Exclusive">
+			<Stem>If male, have you undergone prostate cancer screening with a
+				DRE?</Stem>
+			<Response_Set_Ref Response_Set="yes_no" />
+		</Closed_Question>
+		<Closed_Question Name="pca_history" RCardinality="Exclusive">
+			<Stem>Do you have a personal or family history of prostate cancer?
+			</Stem>
+			<Response_Set_Ref Response_Set="yes_no" />
+		</Closed_Question>
+	</Survey_Page>
+	<Survey_Page ID="page_4" Title="SCREENING, PAGE 4">
+		<Directive>Please answer every question. If you are unsure about
+			how to respond, give your best approximate answer. If you would like
+			to make suggestions about any of the questions, please email us.
+			Please copy into your message the text of the question you're
+			referring to.</Directive>
+		<Question_Block Name="screening_efficacy">
+			<Stem>
+				Assume you are seeing an
+				<span class="keyPhrase"> asymptomatic </span>
+				patient over age 50 with no known risk factors for the disease in
+				question. How beneficial do you believe the following screening
+				tests would be for reducing the patient's risk of mortality?
+			</Stem>
+			<Response_Set ID="Likert_effectiveness" Levels="5"
+				StartValue="-1">
+				<Response_Option>Harmful effect</Response_Option>
+				<Response_Option>No effect</Response_Option>
+				<Response_Option>Small benefit</Response_Option>
+				<Response_Option>Moderate benefit</Response_Option>
+				<Response_Option>Large benefit</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Take-home fecal occult blood test (FOBT)
+			</Sub_Stem>
+			<Sub_Stem>Colonoscopy</Sub_Stem>
+			<Sub_Stem>Prostate Specific Antigen (for men)</Sub_Stem>
+			<Sub_Stem>Digital Rectal Exam (for men)</Sub_Stem>
+			<Sub_Stem>Mammography (for women)</Sub_Stem>
+			<Sub_Stem>Pap Smear (for women)</Sub_Stem>
+			<Sub_Stem>Chest x-ray for lung cancer</Sub_Stem>
+			<Sub_Stem>Sprial CT for lung cancer</Sub_Stem>
+			<Sub_Stem>Electron-beam CT scan for coronary calcium
+			</Sub_Stem>
+		</Question_Block>
+		<Question_Block Name="PSA_percentages">
+			<Stem>How often do you routinely recommend PSA screening for men
+				who have no family history of prostate cancer and who are age ...
+			</Stem>
+			<Response_Set_Ref Response_Set="Count_ranges" />
+			<Sub_Stem>40-49?</Sub_Stem>
+			<Sub_Stem>50-59?</Sub_Stem>
+			<Sub_Stem>60-69?</Sub_Stem>
+			<Sub_Stem>70-79?</Sub_Stem>
+			<Sub_Stem>80+?</Sub_Stem>
+		</Question_Block>
+	</Survey_Page>
+	<Survey_Page ID="page_5" Title="DECISION-MAKING FACTORS, PAGE 5">
+		<Question_Block Name="decision_PSA">
+			<Stem>How much influence do the following factors have on your
+				decision whether or not to order PSA screening?</Stem>
+			<Response_Set_Ref Response_Set="Likert_influence" />
+			<Sub_Stem>Patients' requests for the test</Sub_Stem>
+			<Sub_Stem>Practice guidelines</Sub_Stem>
+			<Sub_Stem>Evidence about the test's effectiveness</Sub_Stem>
+			<Sub_Stem>Time needed to explain the risks/benefits</Sub_Stem>
+			<Sub_Stem>Media campaigns to promote screening</Sub_Stem>
+			<Sub_Stem>Community standards of practice</Sub_Stem>
+		</Question_Block>
+		<Question_Block Name="risk_factors">
+			<Stem>How do the following patient characteristics influence the
+				likelihood of your recommending PSA screening?</Stem>
+			<Response_Set ID="risk_influences" Levels="5">
+				<Response_Option>Less likely</Response_Option>
+				<Response_Option>No influence</Response_Option>
+				<Response_Option>More likely</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Patient's father has a history of prostate cancer
+			</Sub_Stem>
+			<Sub_Stem>Patient is a smoker</Sub_Stem>
+			<Sub_Stem>Patient is African-American</Sub_Stem>
+			<Sub_Stem>Patient is Asian</Sub_Stem>
+			<Sub_Stem>Patient is Hispanic/Latino</Sub_Stem>
+			<Sub_Stem>Patient has metastatic cancer</Sub_Stem>
+			<Sub_Stem>Patient has congestive heart failure with an
+				ejection fraction less than 20%</Sub_Stem>
+			<Sub_Stem>Patient is over age 75</Sub_Stem>
+		</Question_Block>
+	</Survey_Page>
+	<Survey_Page ID="page_6" Title="SHARED DECISION-MAKING, PAGE 6">
+		<Closed_Question Name="decision_style" RCardinality="Exclusive">
+			<Stem>Which approach best characterizes how a final decision about ordering a PSA test is typically made in your practice?</Stem>
+			<Response_Set ID="sdm_range">
+				<Response_Option>I make the final decision.</Response_Option>
+				<Response_Option>I prefer to make the final decision, but only after gathering input from the patient about his preference.</Response_Option>
+				<Response_Option>The patient and I share the decision making as fully as possible.</Response_Option>
+				<Response_Option>I ask the patient to make the decision, but only after we have discussed my opinions.</Response_Option>
+				<Response_Option>I leave the decision up to the patient.</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Closed_Question Name="time_explaining" RCardinality="Exclusive">
+			<Stem>With a typical <span class="keyPhrase"> asymptomatic</span> patient, how much time do you spend explaining the risks/benefits of PSA testing?</Stem>
+			<Response_Set ID="time_spent">
+				<Response_Option>Do not usually discuss with patients</Response_Option>
+				<Response_Option>0-1 minute</Response_Option>
+				<Response_Option>1-5 minutes</Response_Option>
+				<Response_Option>>5 minutes</Response_Option>
+				<Response_Option>Varies too much among individual patients to give a single estimate</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Question_Block Name="risksbenefits_tools">
+			<Stem>How much do you rely on the following methods for informing your patients about PSA screening?</Stem>
+			<Response_Set ID="Likert_helpfulness" Levels="5">
+				<Response_Option>Not at all</Response_Option>
+				<Response_Option>Moderately</Response_Option>
+				<Response_Option>Substantially</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Verbal discussions with you</Sub_Stem>
+			<Sub_Stem>Verbal discussions with your staff</Sub_Stem>
+			<Sub_Stem>Written information</Sub_Stem>
+			<Sub_Stem>Videos or other educational materials</Sub_Stem>
+		</Question_Block>
+		<Question_Block Name="patient_barriers">
+			<Stem>Which of the following are barriers to your patients' making well-informed decisions about PSA screening?</Stem>
+			<Response_Set ID="Likert_barriers" Levels="5">
+				<Response_Option>No barrier</Response_Option>
+				<Response_Option>Minor barrier</Response_Option>
+				<Response_Option>Major barrier</Response_Option>
+			</Response_Set>
+			<Sub_Stem>Lack of interest in learning about the topic</Sub_Stem>
+			<Sub_Stem>The complexity of information about prostate cancer</Sub_Stem>
+			<Sub_Stem>Lack of time for them to learn</Sub_Stem>
+		</Question_Block>
+		<Closed_Question Name="patient_education" RCardinality="Exclusive">
+			<Stem>How helpful would it be if your patients could review educational materials about PSA screening prior to discussing it with you?</Stem>
+			<Response_Set ID="pted_range" Levels="5">
+				<Response_Option>Not at all helpful</Response_Option>
+				<Response_Option>Somewhat helpful</Response_Option>
+				<Response_Option>Very helpful</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+	</Survey_Page>
+	<Response_Set ID="Likert_influence" Levels="5">
+		<Response_Option>No Influence</Response_Option>
+		<Response_Option>Strong Influence</Response_Option>
+	</Response_Set>
+	<Response_Set ID="yes_no">
+		<Response_Option>No</Response_Option>
+		<Response_Option>Yes</Response_Option>
+	</Response_Set>
+	<Response_Set ID="Count_ranges">
+		<Response_Option>0-33%</Response_Option>
+		<Response_Option>34-66%</Response_Option>
+		<Response_Option>67-100%</Response_Option>
+	</Response_Set>
+</Survey>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Web-based Interactive Survey Environment (WISE) : Decline Thanks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="#FFFFCC" text="#000000">
+<table width="100%" cellspacing=1 cellpadding=9 align=left border="0">
+  <tr>
+    <td width="20%" align="center" valign="top"> <img src="images/somlogo.gif" align="right" width="75" height="75"></td>
+	<td width="540" align="center" valign="middle"> <img src="images/title.gif" align="middle" width="400" height="50">
+    </td>
+  </tr>
+    <tr>
+	<td width="20%" rowspan=90>&nbsp;</td>
+    <td width="540" align="center" colspan="1"> <img src="images/survey.gif" width="100" height="30">
+    </td>
+  </tr>
+  <tr>
+    <td width="540" align=left colspan="1">
+	<div style="margin-left: 6em">
+	Thank you for sharing your reasons for declining.
+    </div>
+	</td>
+  </tr>
+  <tr>
+	 <td width="540" align=left colspan="1">
+	 <div style="margin-left: 6em">
+	  If you have questions about this study, please email
+		<a href="mailto:dbell@mednet.ucla.edu">Douglas Bell, MD, PhD</a>
+		or click the button below to close this window.
+	  </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="540" align=center colspan="1"> <a href="javascript:window.close()">
+      <img src="images/close.gif" border=0 width="54" height="23"></a> </td>
+  </tr>
+</table>
+</body>
+</html>

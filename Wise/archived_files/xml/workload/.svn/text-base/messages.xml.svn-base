@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		edited with STYLEVISION v5 rel. 3 U (http://www.xmlspy.com) by Douglas
+		Bell (Div of GIM, Geffen School of Med, UCLA)
+	-->
+<Message_List xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://cme.arc2.ucla.edu/schemata/message_list.xsd"
+	From_String="Tom Early, MD and Samuel Skootsky, MD" From_Email="jdamiani@mednet.ucla.edu">
+	<Message ID="invite_msg_3" Subject="UCLA Specialists' Survey">
+		<p>This is an invitation to the final part of a survey evaluating
+			UCLA primary care physicians. This survey is your chance to
+			acknowledge those who do a great job and to inform those who need
+			improvement. You are among the specialists who have not responded to
+			part 1 of the survey. We have now combined parts 1 and 2 of the
+			survey together so that you can complete it all at once.</p>
+		<p>Please start the survey by clicking on the Web address below.
+			Specialists who have already completed the survey commented that they
+			enjoyed giving this feedback. The survey should take about 5 minutes,
+			but may take more or less depending on how many physicians you decide
+			to evaluate. If you have comments or questions, please contact Joann
+			Damiani at jdamiani@mednet.ucla.edu. </p>
+		<link />
+		<p>Thank you very much!</p>
+		<p>Tom Early and Samuel Skootsky</p>
+	</Message>
+	<Message ID="interrupt1"
+		Subject="You have partially completed the evaluation of UCLA primary care physicians">
+		<p>Thanks for beginning the online survey to evaluate the UCLA
+			primary care physicians. Your answers so far have been saved.</p>
+		<p>Please remember to return and complete the survey. You can
+			start again by clicking on the Web address below. </p>
+		<link />
+		<p>Thank you very much!</p>
+		<p>Tom Early and Samuel Skootsky</p>
+	</Message>
+	<Message ID="thx1"
+		Subject="Thank you for completing the UCLA Specialists' Survey">
+		<p>Thank you for evaluating the UCLA primary care physicians.
+			Your input is greatly appreciated!</p>
+		<p>If you have comments or questions, please contact Joann Damiani
+			at jdamiani@mednet.ucla.edu.</p>
+		<p>Thank you very much!</p>
+		<p>Tom Early and Samuel Skootsky</p>
+	</Message>
+	<Message ID="Review_Msg_3" Subject="Please review the UCLA Specialists' Survey">
+		<p>Please review the survey results</p>
+		<p>And see how the others have done so far.</p>
+		<link />
+		<p>Thank you very much!</p>
+		<p>Tom Early and Samuel Skootsky</p>
+	</Message>
+</Message_List>

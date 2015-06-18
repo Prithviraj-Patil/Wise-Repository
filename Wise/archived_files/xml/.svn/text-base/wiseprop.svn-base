@@ -1,0 +1,47 @@
+# This is the property file for WISE system
+mysql.url= jdbc:mysql://sagedb.arc2.ucla.edu/
+mysql.server = sagedb.arc2.ucla.edu
+email.from = <merg@mednet.ucla.edu>
+alert.email = lingtaocao@yahoo.com
+email.host = smtp.medctr.ucla.edu
+mail.username = ad/merg
+mail.password = wise25
+admin.server = https://auth.cme.ucla.edu/wise/
+db_backup.path = /CME/DB_BACKUP/
+ptop.studyid = 3
+ptop.server = http://localhost:8080pass = qisurvey1
+ptop.dbname = ptop_data
+ptop.proj.title = UCLA Specialists' Evaluation of PCPs
+drew.studyid = 4
+drew.server = http://localhost:8080
+drew.dbpass = ndstry
+drew.dbname = rcmi_tech
+drew.proj.title = DREW RCMI Surveys
+demo.studyid = 5
+demo.server = http://localhost:8080localhost:8080sedemo1
+demo.dbname = demo_db
+demo.proj.title = DREW RCMI Surveys
+dmr.studyid = 6
+dmr.server = http://localhost:8080
+dmr.dbpass = retain14
+dmr.dbname = dmr_data
+dmr.proj.title = DMR Surveys
+prostate.studyid = 7
+prostate.server = http://localhost:8080
+prostatlocalhost:8080tate
+prostate.dbname = prostate_eval
+prostate.proj.title = Prosate Surveys
+sgim.studyid = 8
+sgim.server = http://localhost:8080
+sgim.dbpass = mnlocalhost:8080me = sgim_data
+sgim.proj.title = SGIM Survey
+workload.studyid = 9
+workload.server = http://localhost:8080
+workload.dbpass = chfdm
+localhost:8080workload_data
+workload.proj.title = Workload Survey
+alert.studyid = 10
+alert.server = http://localhost:8080
+alert.dbpass = beer
+alert.dbname localhost:8080t.proj.title = Alert Survey
+#End of the file

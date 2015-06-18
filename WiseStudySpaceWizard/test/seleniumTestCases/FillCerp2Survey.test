@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://survey.ctsi.ucla.edu:8080/" />
+<title>FillCerp2Survey</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">FillCerp2Survey</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/WISE/survey?msg=PXSFA&amp;t=NPOFA</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=PARTICIPATION_COMMUNITY_PROJECTS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;save and next page&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=BEST_PRACTICES</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=MODE_FOR_LEARNING_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=LIKE_TO_LEARN_COM_RESEACH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;save and next page&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;save and next page&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;save and next page&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.repeat_item_name.span3</td>
+	<td>Project 1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=PROJECT_FOCUS_MESH_TERMS</td>
+	<td>Project 1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.add_repeat_item_save_button.unsaved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit/Review</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=repeat_PROJECT_START_DATE</td>
+	<td>1988</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Save Changes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.repeat_item_name.span3</td>
+	<td>Project 2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=PROJECT_FOCUS_MESH_TERMS</td>
+	<td>Project 2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=PROJECT_START_DATE</td>
+	<td>1988</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.add_repeat_item_save_button.unsaved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit/Review</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=repeat_EXACT_PROJECT_END_DATE</td>
+	<td>1989</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;save and next page&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Do you want to save the changes you made?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='content']/font/form/center/a[2]/img</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

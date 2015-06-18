@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="survey_pro2.1.xslt"?>
+<Survey Title="UCLA - Title of the Survey" Project_Name="wisedev" ID="wisedev" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WiseSurvey_repeatQs.xsd" Allow_Goback="true">
+	<Survey_Page Title="Sample User Information Page" ID="page1">
+		<Closed_Question Name="primary_role">
+			<Stem>What is your primary role at your institution?</Stem>
+			<Response_Set ID="prim_rol">
+				<Response_Option>Clinician</Response_Option>
+				<Response_Option>Investigator</Response_Option>
+				<Response_Option>Research coordinator</Response_Option>
+				<Response_Option>Administrator</Response_Option>
+				<Response_Option>Educator</Response_Option>
+				<Response_Option>Community faculty</Response_Option>
+				<Response_Option>Community partner</Response_Option>
+				<Response_Option>Community liaison (e.g., outreach personnel)</Response_Option>
+				<Response_Option>Support services</Response_Option>
+				<Response_Option>Other</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="other_prim_rol">
+			<Precondition>
+				<field>primary_role</field>
+				<eq/>
+				<cn>10</cn>
+			</Precondition>
+			<Stem>If other, please indicate the name of your primary role.</Stem>
+			<Text_Open_Response MultiLine="false" MaxSize="100" Height="5" Width="80"/>
+		</Open_Question>
+		<Closed_Question Name="era_id_yn">
+			<Stem>Do you have an eRA Commons ID?</Stem>
+			<Response_Set ID="y_n">
+				<Response_Option>Yes</Response_Option>
+				<Response_Option>No</Response_Option>
+			</Response_Set>
+		</Closed_Question>
+		<Open_Question Name="era_id">
+			<Precondition>
+				<field>era_id_yn</field>
+				<eq/>
+				<cn>1</cn>
+			</Precondition>
+			<Stem>What is your eRA Commons ID?</Stem>
+			<Text_Open_Response MultiLine="false" MaxSize="100" Height="5" Width="80"/>
+		</Open_Question>
+	</Survey_Page>
+	<Survey_Page ID="page2" Title="Peer-Reviewed Publications">
+		<Closed_Question Name="peer_rev_pubs">
+			<Stem>Did the resources provided by UCLA CTSI result in any peer-reviewed publications?</Stem>
+			<Response_Set_Ref Response_Set="y_n"/>
+		</Closed_Question>
+		<Directive>
+			<Precondition>
+				<field>peer_rev_pubs</field>
+				<eq/>
+				<cn>1</cn>
+			</Precondition>
+				Please enter a title below for each peer-reviewed publication that resulted from UCLA CTSI resources, and answer associated questions.
+		</Directive>
+		<Repeating_Item_Set ID="publications" Title="Peer-Reviewed Publications">
+			<Precondition>
+				<field>peer_rev_pubs</field>
+				<eq/>
+				<cn>1</cn>
+			</Precondition>
+			<Directive>Please provide the following information on any publication(s) that resulted from UCLA CTSI resources.</Directive>
+			<Open_Question Name="authors_mod2">
+				<Stem>Authors</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="100" Height="5" Width="80"/>
+			</Open_Question>
+			<Open_Question Name="title_mod2">
+				<Stem>Title</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="100" Height="5" Width="80"/>
+			</Open_Question>
+			<Open_Question Name="journal_mod2">
+				<Stem>Journal</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="100" Height="5" Width="80"/>
+			</Open_Question>
+			<Open_Question Name="volume_mod2">
+				<Stem>Volume</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="50" Height="5" Width="40"/>
+			</Open_Question>
+			<Open_Question Name="pages_mod2">
+				<Stem>Pages</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="50" Height="5" Width="40"/>
+			</Open_Question>
+			<Open_Question Name="year_mod2">
+				<Stem>Year (yyyy)</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="50" Height="5" Width="40"/>
+			</Open_Question>
+			<Open_Question Name="pubmed_id_mod2">
+				<Stem>PubMed ID Number</Stem>
+				<Text_Open_Response MultiLine="false" MaxSize="50" Height="5" Width="40"/>
+			</Open_Question>
+		</Repeating_Item_Set>
+	</Survey_Page>
+	<Survey_Page ID="page3" Title="Barriers or Challenges">
+		<Open_Question Name="barriers_moving_research">
+			<Stem>Please describe barriers or challenges you encountered in moving your research forward after receiving UCLA CTSI support.</Stem>
+			<Text_Open_Response MultiLine="true" MaxSize="1000" Height="15" Width="80"/>
+		</Open_Question>
+		<Open_Question Name="facilitating_factors">
+			<Stem>Please describe facilitating factors that enabled advances in your research after receiving UCLA CTSI support.</Stem>
+			<Text_Open_Response MultiLine="true" MaxSize="1000" Height="15" Width="80"/>
+		</Open_Question>
+	</Survey_Page>
+	<Invitee_Fields>
+		<p>This is the test survey shared link. Because you are starting this survey from a shared link, we need to ask for some basic information about you. Please fill out the information requested below. Your email address is not required but providing it will enable you to resume if you get interrupted. Your email is also required for you to be entered into the drawing for an iPad.</p>
+		<salutation>
+			<label>Select the saluation to use in email messages to you:</label>
+			<values>
+				<value>Dr.</value>
+				<value>Mr.</value>
+				<value>Ms.</value>
+			</values>
+		</salutation>
+		<firstname>
+			<label>First name</label>
+		</firstname>
+		<lastname>
+			<label>Last name (required)</label>
+		</lastname>
+		<email>
+			<label>Email address</label>
+		</email>
+		<phone>
+			<label>Best phone number</label>
+		</phone>
+	</Invitee_Fields>
+</Survey>

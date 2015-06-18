@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app
+
+xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4" 
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+    <display-name>imageRender</display-name>
+    <servlet-name>AppImageRender</servlet-name>
+    <servlet-class>AppImageRender</servlet-class>
+    </servlet>
+    
+    <servlet>
+    <display-name>styleRender</display-name>
+    <servlet-name>AppStyleRender</servlet-name>
+    <servlet-class>AppStyleRender</servlet-class>
+    </servlet>
+     
+    <servlet>
+    <display-name>setup_survey</display-name>
+    <servlet-name>setup_survey</servlet-name>
+    <servlet-class>setup_survey</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>consent_record</display-name>
+    <servlet-name>consent_record</servlet-name>
+    <servlet-class>consent_record</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>view_results</display-name>
+    <servlet-name>view_results</servlet-name>
+    <servlet-class>view_results</servlet-class>
+    </servlet>
+         
+   
+    <servlet>
+    <display-name>view_open_results</display-name>
+    <servlet-name>view_open_results</servlet-name>
+    <servlet-class>view_open_results</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>declineNOW</display-name>
+    <servlet-name>declineNOW</servlet-name>
+    <servlet-class>declineNOW</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>wise_frame</display-name>
+    <servlet-name>wise_frame</servlet-name>
+    <servlet-class>wise_frame</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>welcome</display-name>
+    <servlet-name>welcome_generate</servlet-name>
+    <servlet-class>welcome_generate</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>start</display-name>
+    <servlet-name>triage</servlet-name>
+    <servlet-class>triage</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>progress</display-name>
+    <servlet-name>progress</servlet-name>
+    <servlet-class>progress</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>view_form</display-name>
+    <servlet-name>view_form</servlet-name>
+    <servlet-class>view_form</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_view_results</display-name>
+    <servlet-name>admin_view_results</servlet-name>
+    <servlet-class>admin.view_results</servlet-class>
+    </servlet>
+         
+     <servlet>
+    <display-name>admin_view_form</display-name>
+    <servlet-name>admin_view_form</servlet-name>
+    <servlet-class>admin.view_form</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_reload</display-name>
+    <servlet-name>admin_reload</servlet-name>
+    <servlet-class>admin.reload</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_survey_loader</display-name>
+    <servlet-name>admin_survey_loader</servlet-name>
+    <servlet-class>admin.survey_loader</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_preface_loader</display-name>
+    <servlet-name>admin_preface_loader</servlet-name>
+    <servlet-class>admin.preface_loader</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_survey_update</display-name>
+    <servlet-name>admin_survey_update</servlet-name>
+    <servlet-class>admin.survey_update</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>admin_print_survey</display-name>
+    <servlet-name>admin_print_survey</servlet-name>
+    <servlet-class>admin.print_survey</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>load_study_space</display-name>
+    <servlet-name>load_study_space</servlet-name>
+    <servlet-class>load_study_space</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>print_study_space</display-name>
+    <servlet-name>print_study_space</servlet-name>
+    <servlet-class>print_study_space</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>readform</display-name>
+    <servlet-name>readform</servlet-name>
+    <servlet-class>readform</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>consent_generate</display-name>
+    <servlet-name>consent_generate</servlet-name>
+    <servlet-class>consent_generate</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>survey</display-name>
+    <servlet-name>begin</servlet-name>
+    <servlet-class>begin</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>interview_login</display-name>
+    <servlet-name>interview_login</servlet-name>
+    <servlet-class>interview.interview_login</servlet-class>
+    </servlet>
+    
+    <servlet>
+    <display-name>interview_logout</display-name>
+    <servlet-name>interview_logout</servlet-name>
+    <servlet-class>interview.interview_logout</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>wise_outer_frame</display-name>
+    <servlet-name>wise_outer_frame</servlet-name>
+    <servlet-class>wise_outer_frame</servlet-class>
+    </servlet>
+         
+    <servlet>
+    <display-name>consent_decline</display-name>
+    <servlet-name>consent_decline</servlet-name>
+    <servlet-class>consent_decline</servlet-class>
+    </servlet>
+         
+    <servlet-mapping>
+    <servlet-name>consent_decline</servlet-name>
+    <url-pattern>/consent_decline</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>setup_survey</servlet-name>
+    <url-pattern>/setup_survey</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>consent_record</servlet-name>
+    <url-pattern>/consent_record</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>view_results</servlet-name>
+    <url-pattern>/view_results</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+    <servlet-name>view_open_results</servlet-name>
+    <url-pattern>/view_open_results</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>declineNOW</servlet-name>
+    <url-pattern>/declineNOW</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>wise_frame</servlet-name>
+    <url-pattern>/wise_frame</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>welcome_generate</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>triage</servlet-name>
+    <url-pattern>/start</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>progress</servlet-name>
+    <url-pattern>/progress</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    <servlet-name>admin_survey_loader</servlet-name>
+    <url-pattern>/admin_survey_loader</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>view_form</servlet-name>
+    <url-pattern>/view_form</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_view_results</servlet-name>
+    <url-pattern>/admin_view_results</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_reload</servlet-name>
+    <url-pattern>/admin_reload</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_survey_loader</servlet-name>
+    <url-pattern>/admin_survey_loader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+    <servlet-name>admin_view_form</servlet-name>
+    <url-pattern>/admin_view_form</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_preface_loader</servlet-name>
+    <url-pattern>/admin_preface_loader</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_survey_update</servlet-name>
+    <url-pattern>/admin_survey_update</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>admin_print_survey</servlet-name>
+    <url-pattern>/admin_print_survey</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>load_study_space</servlet-name>
+    <url-pattern>/load_study_space</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>print_study_space</servlet-name>
+    <url-pattern>/print_study_space</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>readform</servlet-name>
+    <url-pattern>/readform</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>consent_generate</servlet-name>
+    <url-pattern>/consent_generate</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>begin</servlet-name>
+    <url-pattern>/survey</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>interview_login</servlet-name>
+    <url-pattern>/interview_login</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>interview_logout</servlet-name>
+    <url-pattern>/interview_logout</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>wise_outer_frame</servlet-name>
+    <url-pattern>/wise_outer_frame</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+    <servlet-name>AppImageRender</servlet-name>
+    <url-pattern>/imageRender</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    <servlet-name>AppStyleRender</servlet-name>
+    <url-pattern>/styleRender</url-pattern>
+    </servlet-mapping>
+</web-app>
